@@ -14,12 +14,14 @@ struct User {
     let email: String
     let company: String
     let password: String
+    var projects: [Project]?
     
-    init(name: String, email: String, company: String, password: String) {
+    init(name: String, email: String, company: String, password: String, projects: [Project]?) {
         
         self.name = name
         self.email = email
         self.company = company
         self.password = password
+        self.projects = []
     }
 }

@@ -13,12 +13,12 @@ class PunchList {
     let name: String
     let project: Project
     let building: Building
-    let unit: Unit
+    let unit: Unit?
     let categories: [PunchListCategory]
     let punches: [Punch]
     
     
-    init(name: String, project: Project, building: Building, unit: Unit, categories: [PunchListCategory], punches: [Punch]) {
+    init(name: String, project: Project, building: Building, unit: Unit?, categories: [PunchListCategory], punches: [Punch]) {
         
         self.name = name
         self.project = project
