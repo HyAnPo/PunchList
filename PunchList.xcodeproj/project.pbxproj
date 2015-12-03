@@ -10,8 +10,8 @@
 		245894E11C0FA9280000DAFB /* ProjectsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */; };
 		245894E31C0FACE30000DAFB /* LoginSignUpPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894E21C0FACE30000DAFB /* LoginSignUpPickerViewController.swift */; };
 		245894E71C0FAD730000DAFB /* SignupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894E61C0FAD730000DAFB /* SignupTableViewController.swift */; };
+		245894EA1C10DE8C0000DAFB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894E91C10DE8C0000DAFB /* User.swift */; };
 		24CB3F7D1BFAB1D20076FC86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CB3F7C1BFAB1D20076FC86 /* AppDelegate.swift */; };
-		24CB3F7F1BFAB1D20076FC86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CB3F7E1BFAB1D20076FC86 /* ViewController.swift */; };
 		24CB3F821BFAB1D20076FC86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CB3F801BFAB1D20076FC86 /* Main.storyboard */; };
 		24CB3F841BFAB1D20076FC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24CB3F831BFAB1D20076FC86 /* Assets.xcassets */; };
 		24CB3F871BFAB1D20076FC86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CB3F851BFAB1D20076FC86 /* LaunchScreen.storyboard */; };
@@ -21,9 +21,9 @@
 		245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsListTableViewController.swift; sourceTree = "<group>"; };
 		245894E21C0FACE30000DAFB /* LoginSignUpPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignUpPickerViewController.swift; sourceTree = "<group>"; };
 		245894E61C0FAD730000DAFB /* SignupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupTableViewController.swift; path = ../SignupTableViewController.swift; sourceTree = "<group>"; };
+		245894E91C10DE8C0000DAFB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		24CB3F791BFAB1D20076FC86 /* PunchList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunchList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CB3F7C1BFAB1D20076FC86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		24CB3F7E1BFAB1D20076FC86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		24CB3F811BFAB1D20076FC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24CB3F831BFAB1D20076FC86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24CB3F861BFAB1D20076FC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +41,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		245894E81C10DCCE0000DAFB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				245894E61C0FAD730000DAFB /* SignupTableViewController.swift */,
+				245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */,
+				245894E21C0FACE30000DAFB /* LoginSignUpPickerViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		245894EB1C10DE9D0000DAFB /* Model Objects */ = {
+			isa = PBXGroup;
+			children = (
+				245894E91C10DE8C0000DAFB /* User.swift */,
+			);
+			name = "Model Objects";
+			sourceTree = "<group>";
+		};
 		24CB3F701BFAB1D20076FC86 = {
 			isa = PBXGroup;
 			children = (
@@ -60,12 +78,10 @@
 		24CB3F7B1BFAB1D20076FC86 /* PunchList */ = {
 			isa = PBXGroup;
 			children = (
-				245894E61C0FAD730000DAFB /* SignupTableViewController.swift */,
+				245894E81C10DCCE0000DAFB /* ViewControllers */,
 				24CB3F7C1BFAB1D20076FC86 /* AppDelegate.swift */,
-				24CB3F7E1BFAB1D20076FC86 /* ViewController.swift */,
-				245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */,
 				24CB3F801BFAB1D20076FC86 /* Main.storyboard */,
-				245894E21C0FACE30000DAFB /* LoginSignUpPickerViewController.swift */,
+				245894EB1C10DE9D0000DAFB /* Model Objects */,
 				24CB3F831BFAB1D20076FC86 /* Assets.xcassets */,
 				24CB3F851BFAB1D20076FC86 /* LaunchScreen.storyboard */,
 				24CB3F881BFAB1D20076FC86 /* Info.plist */,
@@ -146,9 +162,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				245894E31C0FACE30000DAFB /* LoginSignUpPickerViewController.swift in Sources */,
-				24CB3F7F1BFAB1D20076FC86 /* ViewController.swift in Sources */,
 				245894E11C0FA9280000DAFB /* ProjectsListTableViewController.swift in Sources */,
 				24CB3F7D1BFAB1D20076FC86 /* AppDelegate.swift in Sources */,
+				245894EA1C10DE8C0000DAFB /* User.swift in Sources */,
 				245894E71C0FAD730000DAFB /* SignupTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
