@@ -10,7 +10,29 @@ import Foundation
 
 class UserController {
     
-    static let sharedController = UserController()
+    static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
+        
+        FirebaseController.
+    }
     
+    //create user
+    static func authenticateUser(email: String, password: String, completion: (success: Bool, user: User?) -> Void) {
+        
+        FirebaseController.base.authUser(email, password: password) { (error, response) -> Void in
+            
+            if error != nil {
+                
+                print("Unsuccessful login attempt.")
+            } else {
+                print("User ID: \(response.uid) authenticated successfully.")
+                
+                UserController.
+            }
+        }
+    }
+    
+    static func createUser(name: String, email: String, password: String, company: String, completion: (success: Bool, user: User?) -> Void) {
+        
+    }
     
 }

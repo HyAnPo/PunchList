@@ -24,12 +24,31 @@
 		245895021C11009F0000DAFB /* PunchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245895011C11009F0000DAFB /* PunchListController.swift */; };
 		245895041C1100B90000DAFB /* PunchListCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245895031C1100B90000DAFB /* PunchListCategoryController.swift */; };
 		245895061C1100C30000DAFB /* PunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245895051C1100C30000DAFB /* PunchController.swift */; };
-		245895081C1100D10000DAFB /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245895071C1100D10000DAFB /* NetworkController.swift */; };
+		245895081C1100D10000DAFB /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245895071C1100D10000DAFB /* FirebaseController.swift */; };
+		2458950F1C1151280000DAFB /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2458950E1C1151280000DAFB /* libicucore.tbd */; };
+		245895111C1151390000DAFB /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 245895101C1151390000DAFB /* libc++.tbd */; };
+		245895131C1151430000DAFB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 245895121C1151430000DAFB /* CFNetwork.framework */; };
+		245895151C11515F0000DAFB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 245895141C11515F0000DAFB /* Security.framework */; };
+		245895171C11516A0000DAFB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 245895161C11516A0000DAFB /* SystemConfiguration.framework */; };
+		245895191C1151E40000DAFB /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 245895181C1151E40000DAFB /* Firebase.framework */; };
 		24CB3F7D1BFAB1D20076FC86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CB3F7C1BFAB1D20076FC86 /* AppDelegate.swift */; };
 		24CB3F821BFAB1D20076FC86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CB3F801BFAB1D20076FC86 /* Main.storyboard */; };
 		24CB3F841BFAB1D20076FC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24CB3F831BFAB1D20076FC86 /* Assets.xcassets */; };
 		24CB3F871BFAB1D20076FC86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CB3F851BFAB1D20076FC86 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2458950D1C1150370000DAFB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsListTableViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +68,13 @@
 		245895011C11009F0000DAFB /* PunchListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchListController.swift; sourceTree = "<group>"; };
 		245895031C1100B90000DAFB /* PunchListCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchListCategoryController.swift; sourceTree = "<group>"; };
 		245895051C1100C30000DAFB /* PunchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchController.swift; sourceTree = "<group>"; };
-		245895071C1100D10000DAFB /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		245895071C1100D10000DAFB /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		2458950E1C1151280000DAFB /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		245895101C1151390000DAFB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		245895121C1151430000DAFB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		245895141C11515F0000DAFB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		245895161C11516A0000DAFB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		245895181C1151E40000DAFB /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		24CB3F791BFAB1D20076FC86 /* PunchList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunchList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CB3F7C1BFAB1D20076FC86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24CB3F811BFAB1D20076FC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +88,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				245895171C11516A0000DAFB /* SystemConfiguration.framework in Frameworks */,
+				245895191C1151E40000DAFB /* Firebase.framework in Frameworks */,
+				245895151C11515F0000DAFB /* Security.framework in Frameworks */,
+				245895131C1151430000DAFB /* CFNetwork.framework in Frameworks */,
+				2458950F1C1151280000DAFB /* libicucore.tbd in Frameworks */,
+				245895111C1151390000DAFB /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,9 +134,22 @@
 				245895011C11009F0000DAFB /* PunchListController.swift */,
 				245895031C1100B90000DAFB /* PunchListCategoryController.swift */,
 				245895051C1100C30000DAFB /* PunchController.swift */,
-				245895071C1100D10000DAFB /* NetworkController.swift */,
+				245895071C1100D10000DAFB /* FirebaseController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2458951A1C1151EF0000DAFB /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				245895181C1151E40000DAFB /* Firebase.framework */,
+				245895161C11516A0000DAFB /* SystemConfiguration.framework */,
+				245895141C11515F0000DAFB /* Security.framework */,
+				245895121C1151430000DAFB /* CFNetwork.framework */,
+				245895101C1151390000DAFB /* libc++.tbd */,
+				2458950E1C1151280000DAFB /* libicucore.tbd */,
+			);
+			name = Firebase;
 			sourceTree = "<group>";
 		};
 		24CB3F701BFAB1D20076FC86 = {
@@ -131,6 +175,7 @@
 				245894E81C10DCCE0000DAFB /* ViewControllers */,
 				245894FA1C11004A0000DAFB /* Controllers */,
 				24CB3F7C1BFAB1D20076FC86 /* AppDelegate.swift */,
+				2458951A1C1151EF0000DAFB /* Firebase */,
 				24CB3F801BFAB1D20076FC86 /* Main.storyboard */,
 				24CB3F831BFAB1D20076FC86 /* Assets.xcassets */,
 				24CB3F851BFAB1D20076FC86 /* LaunchScreen.storyboard */,
@@ -149,6 +194,7 @@
 				24CB3F751BFAB1D20076FC86 /* Sources */,
 				24CB3F761BFAB1D20076FC86 /* Frameworks */,
 				24CB3F771BFAB1D20076FC86 /* Resources */,
+				2458950D1C1150370000DAFB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,7 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				245894FC1C1100790000DAFB /* ProjectController.swift in Sources */,
-				245895081C1100D10000DAFB /* NetworkController.swift in Sources */,
+				245895081C1100D10000DAFB /* FirebaseController.swift in Sources */,
 				245894E31C0FACE30000DAFB /* LoginSignUpPickerViewController.swift in Sources */,
 				245895021C11009F0000DAFB /* PunchListController.swift in Sources */,
 				245894F51C10FA7C0000DAFB /* PunchListCategory.swift in Sources */,
@@ -341,6 +387,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PunchList",
+				);
 				INFOPLIST_FILE = PunchList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HAPorter.PunchList;
@@ -354,6 +404,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PunchList",
+				);
 				INFOPLIST_FILE = PunchList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HAPorter.PunchList;
