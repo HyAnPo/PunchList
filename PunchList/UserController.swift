@@ -12,7 +12,12 @@ class UserController {
     
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
         
-        FirebaseController.
+        FirebaseController.dataAtEndpoint("users\(identifier)") { (data) -> Void in
+            
+            if let json = data as? [String: AnyObject] {
+                let user = User(
+            }
+        }
     }
     
     //create user
