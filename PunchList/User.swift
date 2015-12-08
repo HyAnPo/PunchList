@@ -17,16 +17,14 @@ struct User: Equatable, FirebaseType {
     let name: String?
     let email: String
     let company: String?
-    let password: String
     var projects: [Project]?
     var identifier: String?
     
-    init(name: String, email: String, uid: String, company: String, password: String, projects: [Project]?) {
+    init(name: String, email: String, uid: String, company: String, projects: [Project]?) {
         
         self.name = name
         self.email = email
         self.company = company
-        self.password = password
         self.projects = []
         self.identifier = uid
     }

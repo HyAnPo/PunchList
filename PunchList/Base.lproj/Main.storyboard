@@ -1388,6 +1388,13 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="companyTextField" destination="QQc-Ep-nyG" id="evq-qp-Vxk"/>
+                        <outlet property="confirmPasswordTextField" destination="HCt-qG-Qte" id="DVx-nv-SMs"/>
+                        <outlet property="emailTextField" destination="qoW-pL-AdL" id="dt9-Fu-S7b"/>
+                        <outlet property="nameTextField" destination="ZUa-J8-Np0" id="CAu-Dc-DMO"/>
+                        <outlet property="passwordTextField" destination="3Wm-jz-7P7" id="ZzU-Mx-316"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fla-NX-l0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
