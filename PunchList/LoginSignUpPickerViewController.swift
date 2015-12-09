@@ -9,6 +9,9 @@
 import UIKit
 
 class LoginSignUpPickerViewController: UIViewController {
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,23 @@ class LoginSignUpPickerViewController: UIViewController {
     
     @IBAction func loginButtonTapped(sender: AnyObject) {
         
-        dismissViewControllerAnimated(true, completion: nil)
+        UserController.authenticateUser(emailTextField.text!, password: passwordTextField.text!) { (success, user) -> Void in
+            
+            if success {
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                self.validationAlert()
+            }
+        }
+    }
+    
+    // Setup AlertController
+    func validationAlert() {
+        
+        let alert = UIAlertController(title: "Error", message: "Your account can't be created, check your information and try again.", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                presentViewController(alert, animated: true, completion: nil)
     }
 
     /*

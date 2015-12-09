@@ -17,6 +17,19 @@ class SignupTableViewController: UITableViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     var user: User?
+    
+    var fieldsAreNotValid: Bool {
+        
+        if (nameTextField.text!.isEmpty ||
+        emailTextField.text!.isEmpty ||
+        companyTextField.text!.isEmpty ||
+        passwordTextField.text!.isEmpty ||
+            confirmPasswordTextField.text!.isEmpty) {
+                return true
+        } else {
+            return false
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,12 +92,21 @@ class SignupTableViewController: UITableViewController {
     
     @IBAction func createAccountButtonTapped(sender: AnyObject) {
         
-        UserController.createUser(nameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, company: companyTextField.text!) { (success, user) -> Void in
-            if success {
-                
-                self.dismissViewControllerAnimated(true, completion: nil)
-            } else {
-                self.presentValidationAlertWithTitle("Missing Information", text: "Please check your information and try again.")
+//        presentValidationAlertWithTitle("ERROR", text: "Can't proceed without completing each everyfield")
+        
+        if self.fieldsAreNotValid {
+        
+            self.presentValidationAlertWithTitle("Missing Information", text: "Verify that all fields are correct.")
+            
+        } else {
+            
+            UserController.createUser(nameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, company: companyTextField.text!) { (success, user) -> Void in
+                if success == true {
+                    
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    self.presentValidationAlertWithTitle("Missing Information", text: "Please check your information and try again.")
+                }
             }
             
         }
