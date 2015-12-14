@@ -56,9 +56,11 @@ class UserController {
         
         FirebaseController.base.authUser(email, password: password) { (error, response) -> Void in
             
-            if error != nil {
+            if let error = error {
                 
-                print("Unsuccessful login attempt.")
+                print(error.localizedDescription)
+                completion(success: false, user: nil)
+                
             } else {
                 print("User ID: \(response.uid) authenticated successfully.")
                 
@@ -78,9 +80,10 @@ class UserController {
     static func createUser(name: String, email: String, password: String, company: String, completion: (success: Bool, user: User?) -> Void) {
         
         FirebaseController.base.createUser(email, password: password) { (error, response) -> Void in
-            
             if let error = error {
                 print(error.localizedDescription)
+                completion(success: false, user: nil)
+                
             } else {
                 
                 if let uid = response["uid"] as? String {
@@ -93,10 +96,12 @@ class UserController {
                     })
                 }
             }
+            
+            
+            
+            //MARK: - Not sure what user to put in this completion block
+//            completion(success: true, user: UserController.sharedController.currentUser)
         }
-        
-        //MARK: - Not sure what user to put in this completion block
-        completion(success: true, user: UserController.sharedController.currentUser)
     }
     
     static func logoutCurrentUser() {

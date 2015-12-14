@@ -96,18 +96,20 @@ class SignupTableViewController: UITableViewController {
         
         if self.fieldsAreNotValid {
         
-            self.presentValidationAlertWithTitle("Missing Information", text: "Verify that all fields are correct.")
+            self.presentValidationAlertWithTitle("OOPS!", text: "Verify that all fields are correct.")
             
         } else {
             
-            UserController.createUser(nameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, company: companyTextField.text!) { (success, user) -> Void in
-                if success == true {
+            UserController.createUser(nameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, company: companyTextField.text!, completion: { (success, user) -> Void in
+                if success {
                     
                     self.dismissViewControllerAnimated(true, completion: nil)
+                    
                 } else {
-                    self.presentValidationAlertWithTitle("Missing Information", text: "Please check your information and try again.")
+                    self.presentValidationAlertWithTitle("OOPS!", text: "Please check your information and try again.")
+                    
                 }
-            }
+            })
             
         }
         

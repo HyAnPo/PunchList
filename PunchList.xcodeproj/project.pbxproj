@@ -104,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				245894E61C0FAD730000DAFB /* SignupTableViewController.swift */,
-				245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */,
 				245894E21C0FACE30000DAFB /* LoginSignUpPickerViewController.swift */,
+				245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

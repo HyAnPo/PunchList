@@ -12,7 +12,12 @@ class ProjectsListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        performSegueWithIdentifier("loginscreen", sender: nil)
+        
+        if UserController.sharedController.currentUser == nil {
+            
+            performSegueWithIdentifier("loginscreen", sender: nil)
+
+        }
 
     }
 
@@ -42,7 +47,7 @@ class ProjectsListTableViewController: UITableViewController {
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        reUIViewController	UIViewController		turn true
     }
     */
 
@@ -77,6 +82,7 @@ class ProjectsListTableViewController: UITableViewController {
     
     @IBAction func logoutButtonTapped(sender: AnyObject) {
         
+        UserController.logoutCurrentUser()
         performSegueWithIdentifier("loginscreen", sender: nil)
     }
 
