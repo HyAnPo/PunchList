@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24227B311C743A550001DEDC /* BuildingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24227B301C743A550001DEDC /* BuildingListTableViewController.swift */; };
+		24227B331C743B140001DEDC /* MasterPunchListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24227B321C743B140001DEDC /* MasterPunchListTableViewController.swift */; };
+		24227B351C743C0E0001DEDC /* UnitListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24227B341C743C0E0001DEDC /* UnitListTableViewController.swift */; };
+		24227B371C743C960001DEDC /* PunchListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24227B361C743C960001DEDC /* PunchListTableViewController.swift */; };
+		24227B391C743D620001DEDC /* PunchDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24227B381C743D620001DEDC /* PunchDetailTableViewController.swift */; };
 		245894E11C0FA9280000DAFB /* ProjectsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */; };
 		245894E31C0FACE30000DAFB /* LoginSignUpPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894E21C0FACE30000DAFB /* LoginSignUpPickerViewController.swift */; };
 		245894E71C0FAD730000DAFB /* SignupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894E61C0FAD730000DAFB /* SignupTableViewController.swift */; };
@@ -19,11 +24,6 @@
 		245894F71C10FAED0000DAFB /* Punch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894F61C10FAED0000DAFB /* Punch.swift */; };
 		245894F91C1100430000DAFB /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894F81C1100430000DAFB /* UserController.swift */; };
 		245894FC1C1100790000DAFB /* ProjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894FB1C1100790000DAFB /* ProjectController.swift */; };
-		245894FE1C1100820000DAFB /* BuildingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894FD1C1100820000DAFB /* BuildingController.swift */; };
-		245895001C1100900000DAFB /* UnitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894FF1C1100900000DAFB /* UnitController.swift */; };
-		245895021C11009F0000DAFB /* PunchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245895011C11009F0000DAFB /* PunchListController.swift */; };
-		245895041C1100B90000DAFB /* PunchListCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245895031C1100B90000DAFB /* PunchListCategoryController.swift */; };
-		245895061C1100C30000DAFB /* PunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245895051C1100C30000DAFB /* PunchController.swift */; };
 		245895081C1100D10000DAFB /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245895071C1100D10000DAFB /* FirebaseController.swift */; };
 		2458950F1C1151280000DAFB /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2458950E1C1151280000DAFB /* libicucore.tbd */; };
 		245895111C1151390000DAFB /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 245895101C1151390000DAFB /* libc++.tbd */; };
@@ -51,6 +51,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		24227B301C743A550001DEDC /* BuildingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingListTableViewController.swift; sourceTree = "<group>"; };
+		24227B321C743B140001DEDC /* MasterPunchListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterPunchListTableViewController.swift; sourceTree = "<group>"; };
+		24227B341C743C0E0001DEDC /* UnitListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitListTableViewController.swift; sourceTree = "<group>"; };
+		24227B361C743C960001DEDC /* PunchListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchListTableViewController.swift; sourceTree = "<group>"; };
+		24227B381C743D620001DEDC /* PunchDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchDetailTableViewController.swift; sourceTree = "<group>"; };
 		245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsListTableViewController.swift; sourceTree = "<group>"; };
 		245894E21C0FACE30000DAFB /* LoginSignUpPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignUpPickerViewController.swift; sourceTree = "<group>"; };
 		245894E61C0FAD730000DAFB /* SignupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupTableViewController.swift; path = ../SignupTableViewController.swift; sourceTree = "<group>"; };
@@ -63,11 +68,6 @@
 		245894F61C10FAED0000DAFB /* Punch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punch.swift; sourceTree = "<group>"; };
 		245894F81C1100430000DAFB /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		245894FB1C1100790000DAFB /* ProjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectController.swift; sourceTree = "<group>"; };
-		245894FD1C1100820000DAFB /* BuildingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingController.swift; sourceTree = "<group>"; };
-		245894FF1C1100900000DAFB /* UnitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitController.swift; sourceTree = "<group>"; };
-		245895011C11009F0000DAFB /* PunchListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchListController.swift; sourceTree = "<group>"; };
-		245895031C1100B90000DAFB /* PunchListCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchListCategoryController.swift; sourceTree = "<group>"; };
-		245895051C1100C30000DAFB /* PunchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchController.swift; sourceTree = "<group>"; };
 		245895071C1100D10000DAFB /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		2458950E1C1151280000DAFB /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		245895101C1151390000DAFB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -103,6 +103,11 @@
 		245894E81C10DCCE0000DAFB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				24227B321C743B140001DEDC /* MasterPunchListTableViewController.swift */,
+				24227B341C743C0E0001DEDC /* UnitListTableViewController.swift */,
+				24227B361C743C960001DEDC /* PunchListTableViewController.swift */,
+				24227B381C743D620001DEDC /* PunchDetailTableViewController.swift */,
+				24227B301C743A550001DEDC /* BuildingListTableViewController.swift */,
 				245894E61C0FAD730000DAFB /* SignupTableViewController.swift */,
 				245894E21C0FACE30000DAFB /* LoginSignUpPickerViewController.swift */,
 				245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */,
@@ -129,11 +134,6 @@
 			children = (
 				245894F81C1100430000DAFB /* UserController.swift */,
 				245894FB1C1100790000DAFB /* ProjectController.swift */,
-				245894FD1C1100820000DAFB /* BuildingController.swift */,
-				245894FF1C1100900000DAFB /* UnitController.swift */,
-				245895011C11009F0000DAFB /* PunchListController.swift */,
-				245895031C1100B90000DAFB /* PunchListCategoryController.swift */,
-				245895051C1100C30000DAFB /* PunchController.swift */,
 				245895071C1100D10000DAFB /* FirebaseController.swift */,
 			);
 			name = Controllers;
@@ -257,24 +257,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24227B331C743B140001DEDC /* MasterPunchListTableViewController.swift in Sources */,
 				245894FC1C1100790000DAFB /* ProjectController.swift in Sources */,
+				24227B351C743C0E0001DEDC /* UnitListTableViewController.swift in Sources */,
 				245895081C1100D10000DAFB /* FirebaseController.swift in Sources */,
+				24227B311C743A550001DEDC /* BuildingListTableViewController.swift in Sources */,
+				24227B391C743D620001DEDC /* PunchDetailTableViewController.swift in Sources */,
 				245894E31C0FACE30000DAFB /* LoginSignUpPickerViewController.swift in Sources */,
-				245895021C11009F0000DAFB /* PunchListController.swift in Sources */,
 				245894F51C10FA7C0000DAFB /* PunchListCategory.swift in Sources */,
 				245894E11C0FA9280000DAFB /* ProjectsListTableViewController.swift in Sources */,
-				245895001C1100900000DAFB /* UnitController.swift in Sources */,
 				24CB3F7D1BFAB1D20076FC86 /* AppDelegate.swift in Sources */,
 				245894F31C10F98D0000DAFB /* Unit.swift in Sources */,
+				24227B371C743C960001DEDC /* PunchListTableViewController.swift in Sources */,
 				245894EA1C10DE8C0000DAFB /* User.swift in Sources */,
 				245894F91C1100430000DAFB /* UserController.swift in Sources */,
 				245894F11C10F8FD0000DAFB /* PunchList.swift in Sources */,
-				245894FE1C1100820000DAFB /* BuildingController.swift in Sources */,
 				245894E71C0FAD730000DAFB /* SignupTableViewController.swift in Sources */,
 				245894ED1C10F7340000DAFB /* Project.swift in Sources */,
-				245895061C1100C30000DAFB /* PunchController.swift in Sources */,
 				245894F71C10FAED0000DAFB /* Punch.swift in Sources */,
-				245895041C1100B90000DAFB /* PunchListCategoryController.swift in Sources */,
 				245894EF1C10F7F80000DAFB /* Building.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
