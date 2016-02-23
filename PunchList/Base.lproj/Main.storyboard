@@ -247,7 +247,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="foj-L0-UGQ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="projectCell" id="foj-L0-UGQ">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="foj-L0-UGQ" id="Ruu-ej-DdY">
@@ -264,7 +264,9 @@
                             <outlet property="delegate" destination="tSV-be-GAb" id="q6n-Un-Wiw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Projects" id="uEg-uy-zCl"/>
+                    <navigationItem key="navigationItem" title="Projects" id="uEg-uy-zCl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3SQ-f8-Gc3"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="58b-H5-4Hz" userLabel="First Responder" sceneMemberID="firstResponder"/>

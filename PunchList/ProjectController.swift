@@ -10,28 +10,40 @@ import Foundation
 
 class ProjectController {
     
-    var currentUser: User = UserController.sharedController.currentUser
+    static let sharedController = ProjectController()
     
-    var projects: [Project] = []
+//    var currentUser: User = UserController.sharedController.currentUser
+    
+    var projectsArray: [Project] = []
+    
+    init() {
+        self.projectsArray = mockData
+    }
     
     // CREATE
     func addProject(project: Project) {
-        projects.append(project)
+        projectsArray.append(project)
     }
     
     // READ/RETRIEVE
-    func getProjectsForUser() {
-        if let projects = currentUser.projects {
-            self.projects = projects
+    var mockData: [Project] {
+        get {
+            let projects = [
+            Project(projectID: "294lsjf", projectName: "The Seasons", projectPIN: "294028", numberOfBuildings: 12, unitsPerBuilding: 12, dueDate: nil),
+            Project(projectID: "20gasdlfj93", projectName: "FourPlex", projectPIN: "293r82", numberOfBuildings: 1, unitsPerBuilding: 4, dueDate: nil),
+            Project(projectID: "29g20", projectName: "The Villas", projectPIN: nil, numberOfBuildings: 8, unitsPerBuilding: 8, dueDate: nil)
+            ]
+            return projects
         }
     }
+//    func getProjectsForUser() {
+//        if let projects = currentUser.projects {
+//            self.projectsArray = projects
+//        }
+//    }
     
     // UPDATE
     
     // DELETE/ARCHIVE
-    func deleteProject(project: Project) {
-        if let index = projects.indexOf(project) {
-            
-        }
-    }
+    
 }

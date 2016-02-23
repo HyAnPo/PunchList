@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Building {
+class Building: Equatable {
     
     let buildingID: String
     let numberOfUnits: Int
@@ -28,4 +28,8 @@ class Building {
             self.units.append(unit)
         }
     }
+}
+
+func ==(lhs: Building, rhs: Building) -> Bool {
+    return lhs.buildingID == rhs.buildingID && lhs.numberOfUnits == rhs.numberOfUnits
 }

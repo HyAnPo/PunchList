@@ -8,9 +8,10 @@
 
 import Foundation
 
-class Project {
+class Project: Equatable {
     
     let projectID: String
+    let projectName: String
     let projectPIN: String?
     let numberOfBuildings: Int
     var buildings: [Building] = []
@@ -18,9 +19,10 @@ class Project {
     var punchList: PunchList?
     var dueDate: NSDate?
     
-    init(projectID: String, projectPIN: String?, numberOfBuildings: Int, unitsPerBuilding: Int, punchList: PunchList? = nil, dueDate: NSDate?) {
+    init(projectID: String, projectName: String, projectPIN: String?, numberOfBuildings: Int, unitsPerBuilding: Int, punchList: PunchList? = nil, dueDate: NSDate?) {
         
         self.projectID = projectID
+        self.projectName = projectName
         self.projectPIN = projectPIN
         self.numberOfBuildings = numberOfBuildings
         self.unitsPerBuilding = unitsPerBuilding
@@ -32,4 +34,8 @@ class Project {
             self.buildings.append(building)
         }
     }
+}
+
+func ==(lhs: Project, rhs: Project) -> Bool {
+    return lhs.projectID == rhs.projectID && lhs.projectName == rhs.projectName
 }

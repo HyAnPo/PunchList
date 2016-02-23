@@ -101,14 +101,14 @@
 		245894E81C10DCCE0000DAFB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */,
+				24227B301C743A550001DEDC /* BuildingListTableViewController.swift */,
 				24227B321C743B140001DEDC /* MasterPunchListTableViewController.swift */,
 				24227B341C743C0E0001DEDC /* UnitListTableViewController.swift */,
 				24227B361C743C960001DEDC /* PunchListTableViewController.swift */,
 				24227B381C743D620001DEDC /* PunchDetailTableViewController.swift */,
-				24227B301C743A550001DEDC /* BuildingListTableViewController.swift */,
 				245894E61C0FAD730000DAFB /* SignupTableViewController.swift */,
 				245894E21C0FACE30000DAFB /* LoginSignUpPickerViewController.swift */,
-				245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
