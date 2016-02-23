@@ -2,25 +2,19 @@
 //  Unit.swift
 //  PunchList
 //
-//  Created by Andrew Porter on 12/3/15.
-//  Copyright © 2015 Andrew Porter. All rights reserved.
+//  Created by Andrew Porter on 2/22/16.
+//  Copyright © 2016 Andrew Porter. All rights reserved.
 //
 
 import Foundation
 
-struct Unit {
+class Unit {
     
-    let number: String
-    let building: Building
-    let project: Project
-    let punchLists: [PunchList]
+    let unitID: String
+    var punchLists: [PunchList]?
+    var punchItems: [PunchItem]?
     
-    init(number: String, building: Building, project: Project, punchLists: [PunchList]) {
-        
-        self.number = number
-        self.building = building
-        self.project = project
-        self.punchLists = []
-        
+    init(unitID: String, punchLists: [PunchList]?, punchItems: [PunchItem]?) {
+        self.unitID = unitID
     }
 }

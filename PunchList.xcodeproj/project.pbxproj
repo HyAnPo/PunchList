@@ -17,11 +17,6 @@
 		245894E71C0FAD730000DAFB /* SignupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894E61C0FAD730000DAFB /* SignupTableViewController.swift */; };
 		245894EA1C10DE8C0000DAFB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894E91C10DE8C0000DAFB /* User.swift */; };
 		245894ED1C10F7340000DAFB /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894EC1C10F7340000DAFB /* Project.swift */; };
-		245894EF1C10F7F80000DAFB /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894EE1C10F7F80000DAFB /* Building.swift */; };
-		245894F11C10F8FD0000DAFB /* PunchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894F01C10F8FD0000DAFB /* PunchList.swift */; };
-		245894F31C10F98D0000DAFB /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894F21C10F98D0000DAFB /* Unit.swift */; };
-		245894F51C10FA7C0000DAFB /* PunchListCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894F41C10FA7C0000DAFB /* PunchListCategory.swift */; };
-		245894F71C10FAED0000DAFB /* Punch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894F61C10FAED0000DAFB /* Punch.swift */; };
 		245894F91C1100430000DAFB /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894F81C1100430000DAFB /* UserController.swift */; };
 		245894FC1C1100790000DAFB /* ProjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894FB1C1100790000DAFB /* ProjectController.swift */; };
 		245895081C1100D10000DAFB /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245895071C1100D10000DAFB /* FirebaseController.swift */; };
@@ -35,6 +30,10 @@
 		24CB3F821BFAB1D20076FC86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CB3F801BFAB1D20076FC86 /* Main.storyboard */; };
 		24CB3F841BFAB1D20076FC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24CB3F831BFAB1D20076FC86 /* Assets.xcassets */; };
 		24CB3F871BFAB1D20076FC86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CB3F851BFAB1D20076FC86 /* LaunchScreen.storyboard */; };
+		82019ADE1C7B967E009C5155 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82019ADD1C7B967E009C5155 /* Building.swift */; };
+		82019AE01C7B96B0009C5155 /* PunchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82019ADF1C7B96B0009C5155 /* PunchList.swift */; };
+		82019AE21C7B97EB009C5155 /* PunchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82019AE11C7B97EB009C5155 /* PunchItem.swift */; };
+		82019AE41C7B986C009C5155 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82019AE31C7B986C009C5155 /* Unit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,11 +60,6 @@
 		245894E61C0FAD730000DAFB /* SignupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupTableViewController.swift; path = ../SignupTableViewController.swift; sourceTree = "<group>"; };
 		245894E91C10DE8C0000DAFB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		245894EC1C10F7340000DAFB /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		245894EE1C10F7F80000DAFB /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
-		245894F01C10F8FD0000DAFB /* PunchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchList.swift; sourceTree = "<group>"; };
-		245894F21C10F98D0000DAFB /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
-		245894F41C10FA7C0000DAFB /* PunchListCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchListCategory.swift; sourceTree = "<group>"; };
-		245894F61C10FAED0000DAFB /* Punch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punch.swift; sourceTree = "<group>"; };
 		245894F81C1100430000DAFB /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		245894FB1C1100790000DAFB /* ProjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectController.swift; sourceTree = "<group>"; };
 		245895071C1100D10000DAFB /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
@@ -81,6 +75,10 @@
 		24CB3F831BFAB1D20076FC86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24CB3F861BFAB1D20076FC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24CB3F881BFAB1D20076FC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82019ADD1C7B967E009C5155 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		82019ADF1C7B96B0009C5155 /* PunchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchList.swift; sourceTree = "<group>"; };
+		82019AE11C7B97EB009C5155 /* PunchItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchItem.swift; sourceTree = "<group>"; };
+		82019AE31C7B986C009C5155 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +118,10 @@
 			children = (
 				245894E91C10DE8C0000DAFB /* User.swift */,
 				245894EC1C10F7340000DAFB /* Project.swift */,
-				245894EE1C10F7F80000DAFB /* Building.swift */,
-				245894F01C10F8FD0000DAFB /* PunchList.swift */,
-				245894F21C10F98D0000DAFB /* Unit.swift */,
-				245894F41C10FA7C0000DAFB /* PunchListCategory.swift */,
-				245894F61C10FAED0000DAFB /* Punch.swift */,
+				82019ADD1C7B967E009C5155 /* Building.swift */,
+				82019ADF1C7B96B0009C5155 /* PunchList.swift */,
+				82019AE31C7B986C009C5155 /* Unit.swift */,
+				82019AE11C7B97EB009C5155 /* PunchItem.swift */,
 			);
 			name = "Model Objects";
 			sourceTree = "<group>";
@@ -171,12 +168,12 @@
 		24CB3F7B1BFAB1D20076FC86 /* PunchList */ = {
 			isa = PBXGroup;
 			children = (
+				24CB3F801BFAB1D20076FC86 /* Main.storyboard */,
 				245894EB1C10DE9D0000DAFB /* Model Objects */,
 				245894E81C10DCCE0000DAFB /* ViewControllers */,
 				245894FA1C11004A0000DAFB /* Controllers */,
 				24CB3F7C1BFAB1D20076FC86 /* AppDelegate.swift */,
 				2458951A1C1151EF0000DAFB /* Firebase */,
-				24CB3F801BFAB1D20076FC86 /* Main.storyboard */,
 				24CB3F831BFAB1D20076FC86 /* Assets.xcassets */,
 				24CB3F851BFAB1D20076FC86 /* LaunchScreen.storyboard */,
 				24CB3F881BFAB1D20076FC86 /* Info.plist */,
@@ -260,22 +257,21 @@
 				24227B331C743B140001DEDC /* MasterPunchListTableViewController.swift in Sources */,
 				245894FC1C1100790000DAFB /* ProjectController.swift in Sources */,
 				24227B351C743C0E0001DEDC /* UnitListTableViewController.swift in Sources */,
+				82019AE41C7B986C009C5155 /* Unit.swift in Sources */,
 				245895081C1100D10000DAFB /* FirebaseController.swift in Sources */,
+				82019AE01C7B96B0009C5155 /* PunchList.swift in Sources */,
+				82019AE21C7B97EB009C5155 /* PunchItem.swift in Sources */,
 				24227B311C743A550001DEDC /* BuildingListTableViewController.swift in Sources */,
 				24227B391C743D620001DEDC /* PunchDetailTableViewController.swift in Sources */,
 				245894E31C0FACE30000DAFB /* LoginSignUpPickerViewController.swift in Sources */,
-				245894F51C10FA7C0000DAFB /* PunchListCategory.swift in Sources */,
+				82019ADE1C7B967E009C5155 /* Building.swift in Sources */,
 				245894E11C0FA9280000DAFB /* ProjectsListTableViewController.swift in Sources */,
 				24CB3F7D1BFAB1D20076FC86 /* AppDelegate.swift in Sources */,
-				245894F31C10F98D0000DAFB /* Unit.swift in Sources */,
 				24227B371C743C960001DEDC /* PunchListTableViewController.swift in Sources */,
 				245894EA1C10DE8C0000DAFB /* User.swift in Sources */,
 				245894F91C1100430000DAFB /* UserController.swift in Sources */,
-				245894F11C10F8FD0000DAFB /* PunchList.swift in Sources */,
 				245894E71C0FAD730000DAFB /* SignupTableViewController.swift in Sources */,
 				245894ED1C10F7340000DAFB /* Project.swift in Sources */,
-				245894F71C10FAED0000DAFB /* Punch.swift in Sources */,
-				245894EF1C10F7F80000DAFB /* Building.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

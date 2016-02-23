@@ -10,9 +10,28 @@ import Foundation
 
 class ProjectController {
     
-    // Create project
+    var currentUser: User = UserController.sharedController.currentUser
     
-    // Join project
+    var projects: [Project] = []
     
-    // 
+    // CREATE
+    func addProject(project: Project) {
+        projects.append(project)
+    }
+    
+    // READ/RETRIEVE
+    func getProjectsForUser() {
+        if let projects = currentUser.projects {
+            self.projects = projects
+        }
+    }
+    
+    // UPDATE
+    
+    // DELETE/ARCHIVE
+    func deleteProject(project: Project) {
+        if let index = projects.indexOf(project) {
+            
+        }
+    }
 }

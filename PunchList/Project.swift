@@ -8,19 +8,28 @@
 
 import Foundation
 
-struct Project {
+class Project {
     
-    let name: String
-    let pin: String
-    let buildings: Int
-    let units: Int
+    let projectID: String
+    let projectPIN: String?
+    let numberOfBuildings: Int
+    var buildings: [Building] = []
+    let unitsPerBuilding: Int
+    var punchList: PunchList?
+    var dueDate: NSDate?
     
-    init(name: String, pin: String, buildings: Int, units: Int) {
+    init(projectID: String, projectPIN: String?, numberOfBuildings: Int, unitsPerBuilding: Int, punchList: PunchList? = nil, dueDate: NSDate?) {
         
-        self.name = name
-        self.pin = pin
-        self.buildings = buildings
-        self.units = units
+        self.projectID = projectID
+        self.projectPIN = projectPIN
+        self.numberOfBuildings = numberOfBuildings
+        self.unitsPerBuilding = unitsPerBuilding
+        self.punchList = punchList
+        self.dueDate = dueDate
         
+        for num in 1...numberOfBuildings {
+            let building = Building(buildingID: String(num), numberOfUnits: unitsPerBuilding, punchList: nil, project: self)
+            self.buildings.append(building)
+        }
     }
 }
