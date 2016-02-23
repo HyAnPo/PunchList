@@ -44,4 +44,15 @@ class ProjectsListTableViewController: UITableViewController {
 //        performSegueWithIdentifier("loginscreen", sender: nil)
 //    }
 
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toBuildingList" {
+            let destinationViewController = segue.destinationViewController as? BuildingListTableViewController
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let project = ProjectController.sharedController.projectsArray[indexPath.row]
+                destinationViewController?.project = project
+            }
+        }
+    }
 }

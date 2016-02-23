@@ -255,7 +255,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="9pR-2h-oyE" kind="show" id="bIp-zH-cqr"/>
+                                    <segue destination="9pR-2h-oyE" kind="show" identifier="toBuildingList" id="bIp-zH-cqr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -282,7 +282,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zyU-jT-sz7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="buildingCell" id="zyU-jT-sz7">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zyU-jT-sz7" id="nG5-cr-V6A">
@@ -332,7 +332,9 @@
                             <outlet property="delegate" destination="xAT-ou-lF4" id="1lv-Y1-r9J"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Punch Lists" id="Lke-ce-rzd"/>
+                    <navigationItem key="navigationItem" title="Punch Lists" id="Lke-ce-rzd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JAX-uZ-1be"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gmd-XC-3hH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -365,9 +367,7 @@
                             <outlet property="delegate" destination="Xut-87-sZh" id="00C-Dy-ZqD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Units" id="HW7-uc-h7S">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Eun-fz-wCk"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Units" id="HW7-uc-h7S"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDh-jI-bi3" userLabel="First Responder" sceneMemberID="firstResponder"/>
