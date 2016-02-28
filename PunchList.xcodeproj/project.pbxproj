@@ -179,7 +179,7 @@
 				245894E81C10DCCE0000DAFB /* ViewControllers */,
 				245894FA1C11004A0000DAFB /* Controllers */,
 				24CB3F7C1BFAB1D20076FC86 /* AppDelegate.swift */,
-				821FD7131C829C97001572E8 /* PunchLists */,
+				821FD7131C829C97001572E8 /* PunchLists JSON files */,
 				2458951A1C1151EF0000DAFB /* Firebase */,
 				24CB3F831BFAB1D20076FC86 /* Assets.xcassets */,
 				24CB3F851BFAB1D20076FC86 /* LaunchScreen.storyboard */,
@@ -188,14 +188,14 @@
 			path = PunchList;
 			sourceTree = "<group>";
 		};
-		821FD7131C829C97001572E8 /* PunchLists */ = {
+		821FD7131C829C97001572E8 /* PunchLists JSON files */ = {
 			isa = PBXGroup;
 			children = (
 				821FD70D1C829C8C001572E8 /* 4WayPunch.json */,
 				821FD70E1C829C8C001572E8 /* finalPunch.json */,
 				821FD70F1C829C8C001572E8 /* frontEndPunch.json */,
 			);
-			name = PunchLists;
+			name = "PunchLists JSON files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -19,4 +19,14 @@ class MasterPunchListTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
+    @IBAction func addPunchListButtonTapped(sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Add Punch List", message: "Enter a PunchList name", preferredStyle: .Alert)
+        alertController.addTextFieldWithConfigurationHandler { (punchListNameField) -> Void in
+            punchListNameField.placeholder = "Punch list name"
+        }
+        alertController.addAction(UIAlertAction(title: "Create", style: .Default, handler: { (action) -> Void in
+            
+            
+        }))
+    }
 }

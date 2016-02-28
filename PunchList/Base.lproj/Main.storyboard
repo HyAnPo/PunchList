@@ -333,7 +333,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Punch Lists" id="Lke-ce-rzd">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JAX-uZ-1be"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JAX-uZ-1be">
+                            <connections>
+                                <action selector="addPunchListButtonTapped:" destination="xAT-ou-lF4" id="TRW-YJ-1yi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
