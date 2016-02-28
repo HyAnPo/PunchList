@@ -10,32 +10,25 @@ import Foundation
 
 class Project: Equatable {
     
-    let projectID: String
-    let projectName: String
-    let projectPIN: String?
-    let numberOfBuildings: Int
+    let uid: String?
+    let name: String
+    let pin: String?
     var buildings: [Building] = []
-    let unitsPerBuilding: Int
-    var punchList: PunchList?
     var dueDate: NSDate?
     
-    init(projectID: String, projectName: String, projectPIN: String?, numberOfBuildings: Int, unitsPerBuilding: Int, punchList: PunchList? = nil, dueDate: NSDate?) {
-        
-        self.projectID = projectID
-        self.projectName = projectName
-        self.projectPIN = projectPIN
-        self.numberOfBuildings = numberOfBuildings
-        self.unitsPerBuilding = unitsPerBuilding
-        self.punchList = punchList
+    init(id: String?, name: String, pin: String?, numberOfBuildings: Int, unitsPerBuilding: Int, dueDate: NSDate?) {
+        self.uid = id
+        self.name = name
+        self.pin = pin
         self.dueDate = dueDate
         
         for num in 1...numberOfBuildings {
-            let building = Building(buildingID: String(num), numberOfUnits: unitsPerBuilding, punchList: nil, project: self)
+            let building = Building(uid: nil, buildingID: String(num), units: unitsPerBuilding)
             self.buildings.append(building)
         }
     }
 }
 
 func ==(lhs: Project, rhs: Project) -> Bool {
-    return lhs.projectID == rhs.projectID && lhs.projectName == rhs.projectName
+    return lhs.uid == rhs.uid && lhs.name == rhs.name
 }

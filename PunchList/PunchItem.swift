@@ -8,18 +8,19 @@
 
 import Foundation
 
-class PunchItem {
+class PunchItem: Equatable {
     
-    let punchItemID: String
-    let punchItemDescription: String
-    var notes: String?
-    var isComplete: Bool = false
-    let unit: Unit
+    let itemDescription: String
+    let units: Int
+    var completedUnits: [Int] = []
+    var notes: [Int: String] = [:]
     
-    init(punchItemID: String, punchItemDescription: String, notes: String?, unit: Unit) {
-        self.punchItemID = punchItemID
-        self.punchItemDescription = punchItemDescription
-        self.notes = notes
-        self.unit = unit
+    init(itemDescription: String, units: Int) {
+        self.itemDescription = itemDescription
+        self.units = units
     }
+}
+
+func ==(lhs: PunchItem, rhs: PunchItem) -> Bool {
+    return true
 }
