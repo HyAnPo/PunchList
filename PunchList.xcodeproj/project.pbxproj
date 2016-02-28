@@ -34,6 +34,9 @@
 		82019AE01C7B96B0009C5155 /* PunchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82019ADF1C7B96B0009C5155 /* PunchList.swift */; };
 		82019AE21C7B97EB009C5155 /* PunchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82019AE11C7B97EB009C5155 /* PunchItem.swift */; };
 		82019AE41C7B986C009C5155 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82019AE31C7B986C009C5155 /* Unit.swift */; };
+		821FD7101C829C8C001572E8 /* 4WayPunch.json in Resources */ = {isa = PBXBuildFile; fileRef = 821FD70D1C829C8C001572E8 /* 4WayPunch.json */; };
+		821FD7111C829C8C001572E8 /* finalPunch.json in Resources */ = {isa = PBXBuildFile; fileRef = 821FD70E1C829C8C001572E8 /* finalPunch.json */; };
+		821FD7121C829C8C001572E8 /* frontEndPunch.json in Resources */ = {isa = PBXBuildFile; fileRef = 821FD70F1C829C8C001572E8 /* frontEndPunch.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,6 +82,9 @@
 		82019ADF1C7B96B0009C5155 /* PunchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchList.swift; sourceTree = "<group>"; };
 		82019AE11C7B97EB009C5155 /* PunchItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchItem.swift; sourceTree = "<group>"; };
 		82019AE31C7B986C009C5155 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		821FD70D1C829C8C001572E8 /* 4WayPunch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 4WayPunch.json; sourceTree = "<group>"; };
+		821FD70E1C829C8C001572E8 /* finalPunch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = finalPunch.json; sourceTree = "<group>"; };
+		821FD70F1C829C8C001572E8 /* frontEndPunch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = frontEndPunch.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,12 +179,23 @@
 				245894E81C10DCCE0000DAFB /* ViewControllers */,
 				245894FA1C11004A0000DAFB /* Controllers */,
 				24CB3F7C1BFAB1D20076FC86 /* AppDelegate.swift */,
+				821FD7131C829C97001572E8 /* PunchLists */,
 				2458951A1C1151EF0000DAFB /* Firebase */,
 				24CB3F831BFAB1D20076FC86 /* Assets.xcassets */,
 				24CB3F851BFAB1D20076FC86 /* LaunchScreen.storyboard */,
 				24CB3F881BFAB1D20076FC86 /* Info.plist */,
 			);
 			path = PunchList;
+			sourceTree = "<group>";
+		};
+		821FD7131C829C97001572E8 /* PunchLists */ = {
+			isa = PBXGroup;
+			children = (
+				821FD70D1C829C8C001572E8 /* 4WayPunch.json */,
+				821FD70E1C829C8C001572E8 /* finalPunch.json */,
+				821FD70F1C829C8C001572E8 /* frontEndPunch.json */,
+			);
+			name = PunchLists;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +259,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				24CB3F871BFAB1D20076FC86 /* LaunchScreen.storyboard in Resources */,
+				821FD7111C829C8C001572E8 /* finalPunch.json in Resources */,
+				821FD7101C829C8C001572E8 /* 4WayPunch.json in Resources */,
 				24CB3F841BFAB1D20076FC86 /* Assets.xcassets in Resources */,
+				821FD7121C829C8C001572E8 /* frontEndPunch.json in Resources */,
 				24CB3F821BFAB1D20076FC86 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -31,7 +31,7 @@ class ProjectsListTableViewController: UITableViewController {
         
         let project = ProjectController.sharedController.projectsArray[indexPath.row]
         
-        cell.textLabel?.text = project.projectName
+        cell.textLabel?.text = project.name
         
         return cell
     }

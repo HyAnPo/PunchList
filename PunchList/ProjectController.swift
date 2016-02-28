@@ -29,9 +29,10 @@ class ProjectController {
     var mockData: [Project] {
         get {
             let projects = [
-            Project(projectID: "294lsjf", projectName: "The Seasons", projectPIN: "294028", numberOfBuildings: 12, unitsPerBuilding: 12, dueDate: nil),
-            Project(projectID: "20gasdlfj93", projectName: "FourPlex", projectPIN: "293r82", numberOfBuildings: 1, unitsPerBuilding: 4, dueDate: nil),
-            Project(projectID: "29g20", projectName: "The Villas", projectPIN: nil, numberOfBuildings: 8, unitsPerBuilding: 8, dueDate: nil)
+                Project(id: nil, name: "The Four Seasons", pin: "3928", numberOfBuildings: 20, unitsPerBuilding: 12, dueDate: nil),
+                Project(id: nil, name: "Seasons of Layton", pin: "2923", numberOfBuildings: 15, unitsPerBuilding: 12, dueDate: nil),
+                Project(id: nil, name: "4 Plex", pin: "0293", numberOfBuildings: 1, unitsPerBuilding: 4, dueDate: nil),
+                Project(id: nil, name: "Villas On Main", pin: "3920", numberOfBuildings: 10, unitsPerBuilding: 12, dueDate: nil)
             ]
             return projects
         }
