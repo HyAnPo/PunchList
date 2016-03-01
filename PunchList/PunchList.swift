@@ -10,7 +10,7 @@ import Foundation
 
 class PunchList {
     
-    var items: [PunchItem]
+    var items: [PunchItem] = []
     var units: Int
     var completedUnits: [Int] {
         var completedUnits: [Int] = []
@@ -28,8 +28,9 @@ class PunchList {
         return completedUnits
     }
     
-    init(items: [PunchItem], units: Int) {
-        self.items = items
+    init(units: Int) {
         self.units = units
+        
+        
     }
 }
