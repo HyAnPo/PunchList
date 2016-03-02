@@ -9,7 +9,7 @@
 import Foundation
 
 class PunchItem: Equatable {
-    
+        
     let itemDescription: String
     let units: Int
     var completedUnits: [Int] = []
@@ -19,6 +19,7 @@ class PunchItem: Equatable {
         self.itemDescription = itemDescription
         self.units = units
     }
+    
 }
 
 func ==(lhs: PunchItem, rhs: PunchItem) -> Bool {

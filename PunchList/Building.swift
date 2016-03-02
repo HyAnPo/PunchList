@@ -13,13 +13,15 @@ class Building: Equatable {
     let uid: String?
     let buildingID: String
     var units: Int
-    let buildingPunchList: [PunchList] = []
+    var buildingPunchList: [PunchList] = []
     let unitPunchLists: [PunchList] = []
     
     init(uid: String?, buildingID: String, units: Int) {
         self.uid = uid
         self.buildingID = buildingID
         self.units = units
+        
+        self.buildingPunchList.append(PunchList(title: "Front End", units: units))
     }
 }
 

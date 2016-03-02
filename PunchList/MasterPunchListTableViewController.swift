@@ -9,6 +9,8 @@
 import UIKit
 
 class MasterPunchListTableViewController: UITableViewController {
+    
+    var building: Building?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,15 +20,65 @@ class MasterPunchListTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    @IBAction func addPunchListButtonTapped(sender: UIBarButtonItem) {
-        let alertController = UIAlertController(title: "Add Punch List", message: "Enter a PunchList name", preferredStyle: .Alert)
-        alertController.addTextFieldWithConfigurationHandler { (punchListNameField) -> Void in
-            punchListNameField.placeholder = "Punch list name"
+    
+    //MARK: - TableView Data Source methods
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Building Punch List"
+        } else {
+            return "Unit Punch Lists"
         }
-        alertController.addAction(UIAlertAction(title: "Create", style: .Default, handler: { (action) -> Void in
-            
-            
-        }))
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let building = building {
+            if section == 0 {
+                return building.buildingPunchList.count
+            } else {
+                return building.unitPunchLists.count
+            }
+        } else {
+            return 0
+        }
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("punchListCell", forIndexPath: indexPath)
+        
+        if let building = building {
+            if indexPath.section == 0 {
+                let punchList = building.buildingPunchList[indexPath.row]
+                cell.textLabel?.text = punchList.title
+                return cell
+            } else {
+                let punchList = building.unitPunchLists[indexPath.row]
+                cell.textLabel?.text = punchList.title
+                return cell
+            }
+        } else {
+            return cell
+        }
+    }
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toUnitListView" {
+            if let destinationViewController = segue.destinationViewController as? UnitListTableViewController {
+                if let indexPath = tableView.indexPathForSelectedRow, building = self.building {
+                    if indexPath.section == 0 {
+                        let punchList = building.buildingPunchList[indexPath.row]
+                        destinationViewController.punchList = punchList
+                    } else {
+                        let punchList = building.unitPunchLists[indexPath.row]
+                        destinationViewController.punchList = punchList
+                    }
+                    destinationViewController.building = building
+                }
+            }
+        }
     }
 }

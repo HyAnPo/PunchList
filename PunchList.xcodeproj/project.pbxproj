@@ -12,6 +12,7 @@
 		24227B351C743C0E0001DEDC /* UnitListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24227B341C743C0E0001DEDC /* UnitListTableViewController.swift */; };
 		24227B371C743C960001DEDC /* PunchListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24227B361C743C960001DEDC /* PunchListTableViewController.swift */; };
 		24227B391C743D620001DEDC /* PunchDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24227B381C743D620001DEDC /* PunchDetailTableViewController.swift */; };
+		242FDADA1C877A3A002E65EE /* CreateProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242FDAD91C877A3A002E65EE /* CreateProjectTableViewController.swift */; };
 		245894E11C0FA9280000DAFB /* ProjectsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */; };
 		245894E31C0FACE30000DAFB /* LoginSignUpPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894E21C0FACE30000DAFB /* LoginSignUpPickerViewController.swift */; };
 		245894E71C0FAD730000DAFB /* SignupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245894E61C0FAD730000DAFB /* SignupTableViewController.swift */; };
@@ -58,6 +59,7 @@
 		24227B341C743C0E0001DEDC /* UnitListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitListTableViewController.swift; sourceTree = "<group>"; };
 		24227B361C743C960001DEDC /* PunchListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchListTableViewController.swift; sourceTree = "<group>"; };
 		24227B381C743D620001DEDC /* PunchDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchDetailTableViewController.swift; sourceTree = "<group>"; };
+		242FDAD91C877A3A002E65EE /* CreateProjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProjectTableViewController.swift; sourceTree = "<group>"; };
 		245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsListTableViewController.swift; sourceTree = "<group>"; };
 		245894E21C0FACE30000DAFB /* LoginSignUpPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignUpPickerViewController.swift; sourceTree = "<group>"; };
 		245894E61C0FAD730000DAFB /* SignupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupTableViewController.swift; path = ../SignupTableViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		245894E81C10DCCE0000DAFB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				242FDAD91C877A3A002E65EE /* CreateProjectTableViewController.swift */,
 				245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */,
 				24227B301C743A550001DEDC /* BuildingListTableViewController.swift */,
 				24227B321C743B140001DEDC /* MasterPunchListTableViewController.swift */,
@@ -175,10 +178,10 @@
 			isa = PBXGroup;
 			children = (
 				24CB3F801BFAB1D20076FC86 /* Main.storyboard */,
-				245894EB1C10DE9D0000DAFB /* Model Objects */,
-				245894E81C10DCCE0000DAFB /* ViewControllers */,
-				245894FA1C11004A0000DAFB /* Controllers */,
 				24CB3F7C1BFAB1D20076FC86 /* AppDelegate.swift */,
+				245894EB1C10DE9D0000DAFB /* Model Objects */,
+				245894FA1C11004A0000DAFB /* Controllers */,
+				245894E81C10DCCE0000DAFB /* ViewControllers */,
 				821FD7131C829C97001572E8 /* PunchLists JSON files */,
 				2458951A1C1151EF0000DAFB /* Firebase */,
 				24CB3F831BFAB1D20076FC86 /* Assets.xcassets */,
@@ -288,6 +291,7 @@
 				245894E11C0FA9280000DAFB /* ProjectsListTableViewController.swift in Sources */,
 				24CB3F7D1BFAB1D20076FC86 /* AppDelegate.swift in Sources */,
 				24227B371C743C960001DEDC /* PunchListTableViewController.swift in Sources */,
+				242FDADA1C877A3A002E65EE /* CreateProjectTableViewController.swift in Sources */,
 				245894EA1C10DE8C0000DAFB /* User.swift in Sources */,
 				245894F91C1100430000DAFB /* UserController.swift in Sources */,
 				245894E71C0FAD730000DAFB /* SignupTableViewController.swift in Sources */,

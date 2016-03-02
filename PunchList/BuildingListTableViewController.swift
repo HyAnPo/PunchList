@@ -33,5 +33,17 @@ class BuildingListTableViewController: UITableViewController {
         }
         return cell
     }
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toPunchLists" {
+            if let destinationViewController = segue.destinationViewController as? MasterPunchListTableViewController {
+                if let indexPath = tableView.indexPathForSelectedRow, project = project {
+                    let building = project.buildings[indexPath.row]
+                    destinationViewController.building = building
+                }
+            }
+        }
+    }
 
 }
