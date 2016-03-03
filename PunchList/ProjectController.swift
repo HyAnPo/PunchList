@@ -30,7 +30,7 @@ class ProjectController {
         get {
             let projects = [
                 Project(id: nil, name: "The Four Seasons", pin: "3928", numberOfBuildings: 20, unitsPerBuilding: 12, dueDate: nil),
-                Project(id: nil, name: "Seasons of Layton", pin: "2923", numberOfBuildings: 15, unitsPerBuilding: 12, dueDate: nil),
+                Project(id: nil, name: "The Seasons", pin: "2923", numberOfBuildings: 15, unitsPerBuilding: 6, dueDate: nil),
                 Project(id: nil, name: "4 Plex", pin: "0293", numberOfBuildings: 1, unitsPerBuilding: 4, dueDate: nil),
                 Project(id: nil, name: "Villas On Main", pin: "3920", numberOfBuildings: 10, unitsPerBuilding: 12, dueDate: nil)
             ]

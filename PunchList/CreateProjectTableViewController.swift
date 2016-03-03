@@ -9,6 +9,12 @@
 import UIKit
 
 class CreateProjectTableViewController: UITableViewController {
+    
+    @IBOutlet var projectNameTextField: UITextField!
+    @IBOutlet var numberOfBuildingsTextField: UITextField!
+    @IBOutlet var unitsPerBuildingTextField: UITextField!
+    @IBOutlet var estimatedFinishDateTextField: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,5 +36,15 @@ class CreateProjectTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 1
     }
-
+    
+    //MARK: - Buttons
+    @IBAction func createButtonTapped(sender: UIBarButtonItem) {
+        if let projectName = projectNameTextField.text, numberOfBuildings = numberOfBuildingsTextField.text, unitsPerBuilding = unitsPerBuildingTextField.text, numberOfBuildingsIntValue: Int = Int(numberOfBuildings), unitsPerBuildingIntValue: Int = Int(unitsPerBuilding) {
+            let newProject = Project(id: nil, name: projectName, pin: nil, numberOfBuildings: numberOfBuildingsIntValue, unitsPerBuilding: unitsPerBuildingIntValue, dueDate: nil)
+            ProjectController.sharedController.projectsArray.append(newProject)
+        }
+        navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    
 }

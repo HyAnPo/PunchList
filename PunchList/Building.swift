@@ -43,7 +43,7 @@ class Building: Equatable {
             buildingPunchList.append(punchList)
         }
         
-        // Pars the 4Way JSON create a punchList and add it to the unitPunchList array
+        // Parse the 4Way JSON create a punchList and add it to the unitPunchList array
         if let fourWayPath = NSBundle.mainBundle().pathForResource("4WayPunch", ofType: "json") {
             var punchItems: [PunchItem] = []
             var categoryArray: [String] = []
@@ -69,6 +69,35 @@ class Building: Equatable {
                 }
             }
             let punchList = PunchList(title: "4 Way", items: punchItems, units: self.units, categories: categoryArray)
+            self.unitPunchLists.append(punchList)
+        }
+        
+        // Parse final punch JSON create punchList and add it to the unitPunchList array
+        if let finalPunchPath = NSBundle.mainBundle().pathForResource("finalPunch", ofType: "json") {
+            var punchItems: [PunchItem] = []
+            var categoryArray: [String] = []
+            if let data = NSData(contentsOfFile: finalPunchPath) {
+                do {
+                    if let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as? [String: AnyObject] {
+                        if let topLevelDictionary = jsonDictionary["Final Punch"] as? [String: AnyObject] {
+                            categoryArray = Array(topLevelDictionary.keys)
+                            for category in categoryArray {
+                                if let itemsInCategory = topLevelDictionary[category] as? [String] {
+                                    for item in itemsInCategory {
+                                        let punchItem = PunchItem(itemDescription: item, units: self.units)
+                                        punchItems.append(punchItem)
+                                    }
+                                }
+                            }
+                            categoryArray.append("Other")
+                        }
+                    }
+                } catch {
+                    print("Error serializing finalPunch JSON")
+                    return
+                }
+            }
+            let punchList = PunchList(title: "Final Punch", items: punchItems, units: self.units, categories: categoryArray)
             self.unitPunchLists.append(punchList)
         }
     }

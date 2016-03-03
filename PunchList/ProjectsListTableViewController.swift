@@ -21,6 +21,10 @@ class ProjectsListTableViewController: UITableViewController {
 
     }
     
+    override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
+    }
+    
     // MARK: - TableView Data Source methods
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ProjectController.sharedController.projectsArray.count
