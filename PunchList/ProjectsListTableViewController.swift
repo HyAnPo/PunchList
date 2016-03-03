@@ -40,6 +40,16 @@ class ProjectsListTableViewController: UITableViewController {
         return cell
     }
     
+    // MARK: - TableView Delegate methods
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let project = ProjectController.sharedController.projectsArray[indexPath.row]
+            ProjectController.sharedController.deleteProject(project)
+            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+    }
+    
     // MARK: - Buttons
     
 //    @IBAction func logoutButtonTapped(sender: AnyObject) {

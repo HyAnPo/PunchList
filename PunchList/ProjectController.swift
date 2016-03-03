@@ -46,5 +46,10 @@ class ProjectController {
     // UPDATE
     
     // DELETE/ARCHIVE
+    func deleteProject(project: Project) {
+        if let index = projectsArray.indexOf(project) {
+            projectsArray.removeAtIndex(index)
+        }
+    }
     
 }
