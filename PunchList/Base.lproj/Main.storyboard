@@ -312,7 +312,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="punchListCell" id="C9p-an-btv">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="buildingPunchListCell" id="C9p-an-btv">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C9p-an-btv" id="uJb-ai-AaE">
@@ -320,7 +320,18 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Xut-87-sZh" kind="show" identifier="toUnitListView" id="J2C-BJ-4OC"/>
+                                    <segue destination="ITH-ia-feI" kind="show" identifier="toPunchListTableView" id="x8o-r0-NUS"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="unitPunchListCell" id="txN-c8-Dhm">
+                                <rect key="frame" x="0.0" y="136" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="txN-c8-Dhm" id="hCA-Wy-dnl">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Xut-87-sZh" kind="show" identifier="toUnitListView" id="hhn-Mk-TaB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -781,4 +792,7 @@
             <point key="canvasLocation" x="904.5" y="338.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="x8o-r0-NUS"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -23,5 +23,5 @@ class PunchItem: Equatable {
 }
 
 func ==(lhs: PunchItem, rhs: PunchItem) -> Bool {
-    return true
+    return lhs.itemDescription == rhs.itemDescription && lhs.completedUnits == rhs.completedUnits && lhs.notes == rhs.notes
 }

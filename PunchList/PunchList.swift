@@ -11,8 +11,9 @@ import Foundation
 class PunchList {
     
     let title: String
-    var items: [PunchItem] = []
+    var items: [PunchItem]
     var units: Int
+    var categories: [String]?
     var completedUnits: [Int] {
         var completedUnits: [Int] = []
         for num in 1...units {
@@ -29,27 +30,10 @@ class PunchList {
         return completedUnits
     }
     
-    init(title: String, units: Int) {
+    init(title: String, items: [PunchItem], units: Int, categories: [String]?) {
         self.title = title
+        self.items = items
         self.units = units
-        
-        if let path = NSBundle.mainBundle().pathForResource("frontEndPunch", ofType: "json") {
-            if let data = NSData(contentsOfFile: path) {
-                do {
-                    if let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as? [String: AnyObject] {
-                        if let punchItemsArray = jsonDictionary["Front End Punch"] as? [String] {
-                            for item in punchItemsArray {
-                                let punchItem = PunchItem(itemDescription: item, units: self.units)
-                                self.items.append(punchItem)
-                            }
-                        }
-                    }
-                } catch {
-                    print("Error serializing JSON")
-                    return
-                }
-            }
-            
-        }
+        self.categories = categories
     }
 }

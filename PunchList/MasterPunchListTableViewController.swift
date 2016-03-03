@@ -46,23 +46,21 @@ class MasterPunchListTableViewController: UITableViewController {
         }
     }
     
+    // This is the unitPunchListCell data source method
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("punchListCell", forIndexPath: indexPath)
-        
-        if let building = building {
-            if indexPath.section == 0 {
-                let punchList = building.buildingPunchList[indexPath.row]
-                cell.textLabel?.text = punchList.title
-                return cell
-            } else {
-                let punchList = building.unitPunchLists[indexPath.row]
-                cell.textLabel?.text = punchList.title
-                return cell
-            }
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("buildingPunchListCell", forIndexPath: indexPath)
+            let punchList = building?.buildingPunchList[indexPath.row]
+            cell.textLabel?.text = punchList?.title
+            return cell
         } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("unitPunchListCell", forIndexPath: indexPath)
+            let punchList = building?.unitPunchLists[indexPath.row]
+            cell.textLabel?.text = punchList?.title
             return cell
         }
     }
+    
     
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -77,6 +75,13 @@ class MasterPunchListTableViewController: UITableViewController {
                         destinationViewController.punchList = punchList
                     }
                     destinationViewController.building = building
+                }
+            }
+        } else if segue.identifier == "toPunchListTableView" {
+            if let destinationViewController = segue.destinationViewController as? PunchListTableViewController {
+                if let indexPath = tableView.indexPathForSelectedRow, building = self.building {
+                    let punchList = building.buildingPunchList[indexPath.row]
+                    destinationViewController.punchList = punchList
                 }
             }
         }
