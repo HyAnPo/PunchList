@@ -44,6 +44,20 @@ class ProjectController {
 //    }
     
     // UPDATE
+    func addPunchItemToPunchListForBuilding(building: Building, punchList: PunchList, punchItem: PunchItem) {
+        if let index = building.buildingPunchList.indexOf(punchList) {
+            print(building.buildingPunchList[index].items.count)
+            building.buildingPunchList[index].items.append(punchItem)
+            print(building.buildingPunchList[index].items.count)
+        }
+        
+        if let index = building.unitPunchLists.indexOf(punchList) {
+            print(building.unitPunchLists[index].items.count)
+            building.unitPunchLists[index].items.append(punchItem)
+            print(building.unitPunchLists[index].items.count)
+        }
+        
+    }
     
     // DELETE/ARCHIVE
     func deleteProject(project: Project) {

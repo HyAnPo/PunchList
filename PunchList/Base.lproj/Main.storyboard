@@ -426,7 +426,13 @@
                             <outlet property="delegate" destination="ITH-ia-feI" id="Ugp-hC-heU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Punch List" id="bl7-7F-IPj"/>
+                    <navigationItem key="navigationItem" title="Punch List" id="bl7-7F-IPj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="RZL-sz-aNR">
+                            <connections>
+                                <action selector="plusButtonTapped:" destination="ITH-ia-feI" id="6tL-yc-ezV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CM6-yZ-HJB" userLabel="First Responder" sceneMemberID="firstResponder"/>

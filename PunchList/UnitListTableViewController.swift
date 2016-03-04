@@ -48,7 +48,8 @@ class UnitListTableViewController: UITableViewController {
             if let destinationViewController = segue.destinationViewController as? PunchListTableViewController {
                 if let indexPath = tableView.indexPathForSelectedRow {
                     let unit = indexPath.row
-                    if let punchList = self.punchList {
+                    if let punchList = self.punchList, building = self.building {
+                        destinationViewController.building = building
                         destinationViewController.punchList = punchList
                         destinationViewController.unit = unit
                     }

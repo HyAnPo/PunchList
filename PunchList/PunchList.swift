@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PunchList {
+class PunchList: Equatable {
     
     let title: String
     var items: [PunchItem]
@@ -36,4 +36,8 @@ class PunchList {
         self.units = units
         self.categories = categories
     }
+}
+
+func ==(lhs: PunchList, rhs: PunchList) -> Bool {
+    return lhs.title == rhs.title && lhs.items == rhs.items && lhs.units == rhs.units
 }

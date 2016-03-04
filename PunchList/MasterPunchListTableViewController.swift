@@ -82,6 +82,9 @@ class MasterPunchListTableViewController: UITableViewController {
                 if let indexPath = tableView.indexPathForSelectedRow, building = self.building {
                     let punchList = building.buildingPunchList[indexPath.row]
                     destinationViewController.punchList = punchList
+                    if let building = self.building {
+                        destinationViewController.building = building
+                    }
                 }
             }
         }
