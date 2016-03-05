@@ -32,6 +32,7 @@
 		24CB3F841BFAB1D20076FC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24CB3F831BFAB1D20076FC86 /* Assets.xcassets */; };
 		24CB3F871BFAB1D20076FC86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CB3F851BFAB1D20076FC86 /* LaunchScreen.storyboard */; };
 		24FED0B21C8A5E0100585668 /* PunchItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FED0B11C8A5E0100585668 /* PunchItemTableViewCell.swift */; };
+		24FED0B41C8ACD8500585668 /* PunchItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FED0B31C8ACD8500585668 /* PunchItemController.swift */; };
 		82019ADE1C7B967E009C5155 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82019ADD1C7B967E009C5155 /* Building.swift */; };
 		82019AE01C7B96B0009C5155 /* PunchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82019ADF1C7B96B0009C5155 /* PunchList.swift */; };
 		82019AE21C7B97EB009C5155 /* PunchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82019AE11C7B97EB009C5155 /* PunchItem.swift */; };
@@ -82,6 +83,7 @@
 		24CB3F861BFAB1D20076FC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24CB3F881BFAB1D20076FC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24FED0B11C8A5E0100585668 /* PunchItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchItemTableViewCell.swift; sourceTree = "<group>"; };
+		24FED0B31C8ACD8500585668 /* PunchItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchItemController.swift; sourceTree = "<group>"; };
 		82019ADD1C7B967E009C5155 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		82019ADF1C7B96B0009C5155 /* PunchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchList.swift; sourceTree = "<group>"; };
 		82019AE11C7B97EB009C5155 /* PunchItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchItem.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		245894FA1C11004A0000DAFB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				24FED0B31C8ACD8500585668 /* PunchItemController.swift */,
 				245894F81C1100430000DAFB /* UserController.swift */,
 				245894FB1C1100790000DAFB /* ProjectController.swift */,
 				245895071C1100D10000DAFB /* FirebaseController.swift */,
@@ -289,6 +292,7 @@
 				82019AE21C7B97EB009C5155 /* PunchItem.swift in Sources */,
 				24227B311C743A550001DEDC /* BuildingListTableViewController.swift in Sources */,
 				24227B391C743D620001DEDC /* PunchDetailTableViewController.swift in Sources */,
+				24FED0B41C8ACD8500585668 /* PunchItemController.swift in Sources */,
 				245894E31C0FACE30000DAFB /* LoginSignUpPickerViewController.swift in Sources */,
 				82019ADE1C7B967E009C5155 /* Building.swift in Sources */,
 				24FED0B21C8A5E0100585668 /* PunchItemTableViewCell.swift in Sources */,

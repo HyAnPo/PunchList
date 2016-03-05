@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -409,14 +410,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="punchItemCell" id="e1V-VU-310">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="punchItemCell" id="e1V-VU-310" customClass="PunchItemTableViewCell" customModule="PunchList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e1V-VU-310" id="zYS-Mh-3O9">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1h-fj-mdr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PunchItem Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tu0-d5-rHV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="331" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fey-FM-OdR">
+                                                    <rect key="frame" x="331" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="fey-FM-OdR" secondAttribute="height" multiplier="1:1" id="ATt-2C-SZF"/>
+                                                    </constraints>
+                                                    <state key="normal" image="incomplete"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fey-FM-OdR" firstAttribute="top" secondItem="B1h-fj-mdr" secondAttribute="topMargin" id="12O-ad-HSg"/>
+                                                <constraint firstItem="fey-FM-OdR" firstAttribute="bottom" secondItem="B1h-fj-mdr" secondAttribute="bottomMargin" constant="8" id="cTh-hJ-z2M"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="12O-ad-HSg"/>
+                                                    <exclude reference="cTh-hJ-z2M"/>
+                                                </mask>
+                                            </variation>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="B1h-fj-mdr" secondAttribute="trailing" id="9Kc-Vr-XtO"/>
+                                        <constraint firstItem="B1h-fj-mdr" firstAttribute="top" secondItem="zYS-Mh-3O9" secondAttribute="top" id="H8M-sq-gOS"/>
+                                        <constraint firstAttribute="bottom" secondItem="B1h-fj-mdr" secondAttribute="bottom" id="QnA-m3-Ykf"/>
+                                        <constraint firstItem="B1h-fj-mdr" firstAttribute="leading" secondItem="zYS-Mh-3O9" secondAttribute="leading" id="au7-ba-Fg8"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="completeButton" destination="fey-FM-OdR" id="hGD-2t-hVj"/>
+                                    <outlet property="punchDescriptionLabel" destination="Tu0-d5-rHV" id="yLC-sw-PDd"/>
                                     <segue destination="hcb-St-4hE" kind="show" identifier="toDetailView" id="zDD-eR-3VW"/>
                                 </connections>
                             </tableViewCell>
@@ -821,6 +860,9 @@
             <point key="canvasLocation" x="904.5" y="338.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="incomplete" width="512" height="512"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="x8o-r0-NUS"/>
     </inferredMetricsTieBreakers>

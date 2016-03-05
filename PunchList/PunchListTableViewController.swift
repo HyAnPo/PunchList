@@ -45,20 +45,14 @@ class PunchListTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("punchItemCell", forIndexPath: indexPath)
-        let punchItem = punchList?.items[indexPath.row]
-        
-        cell.textLabel?.text = punchItem?.itemDescription
-        
-        if let building = building, buildingNumber = Int(building.buildingID) {
-            if punchItem?.completedUnits.contains(buildingNumber) == true {
-                changeCellTextColor(cell, colorForState: UIColor.greenColor())
-            } else if punchItem?.completedUnits.contains(self.unit!) == true {
-                changeCellTextColor(cell, colorForState: UIColor.greenColor())
-            }
+        if let cell = tableView.dequeueReusableCellWithIdentifier("punchItemCell", forIndexPath: indexPath) as? PunchItemTableViewCell, punchList = punchList {
+            let punchItem = punchList.items[indexPath.row]
+            cell.updateCellWithDescription(punchItem, unit: unit!)
+            
+            return cell
+        } else {
+            return UITableViewCell()
         }
-        
-        return cell
     }
     
     // MARK: - Buttons

@@ -56,6 +56,7 @@ class PunchDetailTableViewController: UITableViewController {
             } else {
                 if let index = punchItem.completedUnits.indexOf(unit) {
                     punchItem.completedUnits.removeAtIndex(index)
+                    punchButton.title = "👊🏻"
                 }
             }
         }
