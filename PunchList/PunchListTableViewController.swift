@@ -18,6 +18,10 @@ class PunchListTableViewController: UITableViewController {
         super.viewDidLoad()
 
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -45,12 +49,33 @@ class PunchListTableViewController: UITableViewController {
         let punchItem = punchList?.items[indexPath.row]
         
         cell.textLabel?.text = punchItem?.itemDescription
+        
+        if let building = building, buildingNumber = Int(building.buildingID) {
+            if punchItem?.completedUnits.contains(buildingNumber) == true {
+                changeCellTextColor(cell, colorForState: UIColor.greenColor())
+            } else if punchItem?.completedUnits.contains(self.unit!) == true {
+                changeCellTextColor(cell, colorForState: UIColor.greenColor())
+            }
+        }
+        
         return cell
     }
     
     // MARK: - Buttons
     @IBAction func plusButtonTapped(sender: UIBarButtonItem) {
         addNewPunchItemWithAlertController()
+    }
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toDetailView" {
+            if let destinationViewController = segue.destinationViewController as? PunchDetailTableViewController {
+                if let indexPath = tableView.indexPathForSelectedRow, punchList = self.punchList, unit = self.unit {
+                    destinationViewController.unit = unit
+                    destinationViewController.punchItem = punchList.items[indexPath.row]
+                }
+            }
+        }
     }
     
     // MARK: - Functions
@@ -72,6 +97,10 @@ class PunchListTableViewController: UITableViewController {
         alert.addAction(cancelAction)
     
         presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func changeCellTextColor(cell: UITableViewCell, colorForState: UIColor) {
+        cell.textLabel?.textColor = colorForState
     }
     
 }

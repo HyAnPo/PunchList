@@ -417,7 +417,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="hcb-St-4hE" kind="show" id="zDD-eR-3VW"/>
+                                    <segue destination="hcb-St-4hE" kind="show" identifier="toDetailView" id="zDD-eR-3VW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -457,18 +457,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="75.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Fw-7K-2hk">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iq-NX-j04">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="6Fw-7K-2hk" secondAttribute="bottom" id="AnL-QG-ubI"/>
-                                                <constraint firstAttribute="trailing" secondItem="6Fw-7K-2hk" secondAttribute="trailing" id="BIN-1r-iBF"/>
-                                                <constraint firstItem="6Fw-7K-2hk" firstAttribute="leading" secondItem="NkN-89-jAF" secondAttribute="leading" id="Ode-W3-3PY"/>
-                                                <constraint firstItem="6Fw-7K-2hk" firstAttribute="top" secondItem="NkN-89-jAF" secondAttribute="top" id="r7S-Sy-QLh"/>
+                                                <constraint firstAttribute="bottom" secondItem="9iq-NX-j04" secondAttribute="bottom" id="HJ4-On-7UX"/>
+                                                <constraint firstItem="9iq-NX-j04" firstAttribute="leading" secondItem="NkN-89-jAF" secondAttribute="leading" id="Jkk-ut-Jhz"/>
+                                                <constraint firstAttribute="trailing" secondItem="9iq-NX-j04" secondAttribute="trailing" id="YYg-qn-FYT"/>
+                                                <constraint firstItem="9iq-NX-j04" firstAttribute="top" secondItem="NkN-89-jAF" secondAttribute="top" id="hG3-Ok-ZkC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -559,9 +559,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Punch Item Detail" id="zxY-bu-fNL">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="8db-Bb-Dhv"/>
+                        <barButtonItem key="rightBarButtonItem" title="👊🏻" id="8db-Bb-Dhv">
+                            <connections>
+                                <action selector="punchButtonTapped:" destination="hcb-St-4hE" id="6gF-yN-2HW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="9iq-NX-j04" id="aTB-k5-CQw"/>
+                        <outlet property="notesTextView" destination="c9u-x4-aLs" id="up0-yN-S5f"/>
+                        <outlet property="punchButton" destination="8db-Bb-Dhv" id="GNX-OU-Z1g"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAk-td-BuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -31,6 +31,7 @@
 		24CB3F821BFAB1D20076FC86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CB3F801BFAB1D20076FC86 /* Main.storyboard */; };
 		24CB3F841BFAB1D20076FC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24CB3F831BFAB1D20076FC86 /* Assets.xcassets */; };
 		24CB3F871BFAB1D20076FC86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CB3F851BFAB1D20076FC86 /* LaunchScreen.storyboard */; };
+		24FED0B21C8A5E0100585668 /* PunchItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FED0B11C8A5E0100585668 /* PunchItemTableViewCell.swift */; };
 		82019ADE1C7B967E009C5155 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82019ADD1C7B967E009C5155 /* Building.swift */; };
 		82019AE01C7B96B0009C5155 /* PunchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82019ADF1C7B96B0009C5155 /* PunchList.swift */; };
 		82019AE21C7B97EB009C5155 /* PunchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82019AE11C7B97EB009C5155 /* PunchItem.swift */; };
@@ -80,6 +81,7 @@
 		24CB3F831BFAB1D20076FC86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24CB3F861BFAB1D20076FC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24CB3F881BFAB1D20076FC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24FED0B11C8A5E0100585668 /* PunchItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchItemTableViewCell.swift; sourceTree = "<group>"; };
 		82019ADD1C7B967E009C5155 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		82019ADF1C7B96B0009C5155 /* PunchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchList.swift; sourceTree = "<group>"; };
 		82019AE11C7B97EB009C5155 /* PunchItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchItem.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		245894E81C10DCCE0000DAFB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				24FED0B11C8A5E0100585668 /* PunchItemTableViewCell.swift */,
 				242FDAD91C877A3A002E65EE /* CreateProjectTableViewController.swift */,
 				245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */,
 				24227B301C743A550001DEDC /* BuildingListTableViewController.swift */,
@@ -288,6 +291,7 @@
 				24227B391C743D620001DEDC /* PunchDetailTableViewController.swift in Sources */,
 				245894E31C0FACE30000DAFB /* LoginSignUpPickerViewController.swift in Sources */,
 				82019ADE1C7B967E009C5155 /* Building.swift in Sources */,
+				24FED0B21C8A5E0100585668 /* PunchItemTableViewCell.swift in Sources */,
 				245894E11C0FA9280000DAFB /* ProjectsListTableViewController.swift in Sources */,
 				24CB3F7D1BFAB1D20076FC86 /* AppDelegate.swift in Sources */,
 				24227B371C743C960001DEDC /* PunchListTableViewController.swift in Sources */,
