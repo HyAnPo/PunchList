@@ -10,7 +10,7 @@ import Foundation
 
 class PunchItemController {
     
-    func togglePunchItemComplete(punchItem: PunchItem, unit: Int) {
+    static func togglePunchItemComplete(punchItem: PunchItem, unit: Int) {
         if !punchItem.completedUnits.contains(unit) {
             punchItem.completedUnits.append(unit)
         } else if punchItem.completedUnits.contains(unit) {

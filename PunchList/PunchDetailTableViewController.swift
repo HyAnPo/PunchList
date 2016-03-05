@@ -16,6 +16,7 @@ class PunchDetailTableViewController: UITableViewController {
     
     var punchItem: PunchItem?
     var unit: Int?
+    var building: Building?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,22 +42,30 @@ class PunchDetailTableViewController: UITableViewController {
     }
     
     func changeButton() {
-        if let punchItem = punchItem, unit = unit {
-            if punchItem.completedUnits.contains(unit) {
-                punchButton.title = "✔️"
+        if let punchItem = punchItem {
+            if let unit = unit {
+                if punchItem.completedUnits.contains(unit) {
+                    punchButton.title = "✔️"
+                }
+            } else if let building = self.building {
+                if let buildingNumber = Int(building.buildingID) {
+                    if punchItem.completedUnits.contains(buildingNumber) {
+                        punchButton.title = "✔️"
+                    }
+                }
             }
         }
     }
     
     func markPunchComplete() {
-        if let punchItem = punchItem, unit = unit {
-            if !punchItem.completedUnits.contains(unit) {
-                punchItem.completedUnits.append(unit)
-                punchButton.title = "✔️"
-            } else {
-                if let index = punchItem.completedUnits.indexOf(unit) {
-                    punchItem.completedUnits.removeAtIndex(index)
-                    punchButton.title = "👊🏻"
+        if let punchItem = punchItem {
+            if let unit = self.unit {
+                PunchItemController.togglePunchItemComplete(punchItem, unit: unit)
+                changeButton()
+            } else if let building = self.building {
+                if let buildingNumber = Int(building.buildingID) {
+                    PunchItemController.togglePunchItemComplete(punchItem, unit: buildingNumber)
+                    changeButton()
                 }
             }
         }

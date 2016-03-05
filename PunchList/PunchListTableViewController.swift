@@ -47,9 +47,16 @@ class PunchListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier("punchItemCell", forIndexPath: indexPath) as? PunchItemTableViewCell, punchList = punchList {
             let punchItem = punchList.items[indexPath.row]
-            cell.updateCellWithDescription(punchItem, unit: unit!)
-            
-            return cell
+            if let unit = unit {
+                cell.updateCellWithDescription(punchItem, unit: unit)
+                return cell
+            } else if let building = building {
+                if let buildingNumber = Int(building.buildingID) {
+                    cell.updateCellWithDescription(punchItem, unit: buildingNumber)
+                    return cell
+                }
+            }
+            return UITableViewCell()
         } else {
             return UITableViewCell()
         }
@@ -64,9 +71,14 @@ class PunchListTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toDetailView" {
             if let destinationViewController = segue.destinationViewController as? PunchDetailTableViewController {
-                if let indexPath = tableView.indexPathForSelectedRow, punchList = self.punchList, unit = self.unit {
-                    destinationViewController.unit = unit
-                    destinationViewController.punchItem = punchList.items[indexPath.row]
+                if let indexPath = tableView.indexPathForSelectedRow, punchList = self.punchList {
+                    if let unit = unit {
+                        destinationViewController.unit = unit
+                        destinationViewController.punchItem = punchList.items[indexPath.row]
+                    } else if let building = self.building {
+                        destinationViewController.building = building
+                        destinationViewController.punchItem = punchList.items[indexPath.row]
+                    }
                 }
             }
         }
@@ -97,4 +109,12 @@ class PunchListTableViewController: UITableViewController {
         cell.textLabel?.textColor = colorForState
     }
     
+}
+
+extension PunchListTableViewController: PunchItemTableViewCellDelegate {
+    
+    func punchItemCellButtonTapped(sender: PunchItemTableViewCell) {
+        
+        
+    }
 }
