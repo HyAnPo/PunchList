@@ -24,24 +24,30 @@ class PunchItemTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    // MARK: - Buttons
+    @IBAction func buttonTapped(sender: UIButton) {
+        if let delegate = delegate {
+            delegate.punchItemCellButtonTapped(self)
+        }
     }
+    
     
     // MARK: - Functions
     func updateCellWithDescription(punchItem: PunchItem, unit: Int) {
         punchDescriptionLabel.text = punchItem.itemDescription
-        updateButtonImage(punchItem, unit: unit)
+        if punchItem.completedUnits.contains(unit) {
+            completeButton.setImage(UIImage(named: "complete"), forState: .Normal)
+        } else {
+            completeButton.setImage(UIImage(named: "incomplete"), forState: .Normal)
+        }
     }
     
-    func updateButtonImage(punchItem: PunchItem, unit: Int) {
-        if punchItem.completedUnits.contains(unit) == true {
-            completeButton.imageView?.image = UIImage(named: "complete")
-        } else if !punchItem.completedUnits.contains(unit) {
-            completeButton.imageView?.image = UIImage(named: "incomplete")
+    func toggleButtonImage() {
+        if completeButton.imageView?.image == UIImage(named: "incomplete") {
+            completeButton.setImage(UIImage(named: "complete"), forState: .Normal)
+        } else {
+            completeButton.setImage(UIImage(named: "incomplete"), forState: .Normal)
         }
     }
 

@@ -49,10 +49,12 @@ class PunchListTableViewController: UITableViewController {
             let punchItem = punchList.items[indexPath.row]
             if let unit = unit {
                 cell.updateCellWithDescription(punchItem, unit: unit)
+                cell.delegate = self
                 return cell
             } else if let building = building {
                 if let buildingNumber = Int(building.buildingID) {
                     cell.updateCellWithDescription(punchItem, unit: buildingNumber)
+                    cell.delegate = self
                     return cell
                 }
             }
@@ -114,7 +116,60 @@ class PunchListTableViewController: UITableViewController {
 extension PunchListTableViewController: PunchItemTableViewCellDelegate {
     
     func punchItemCellButtonTapped(sender: PunchItemTableViewCell) {
-        
-        
+        if let indexPath = tableView.indexPathForCell(sender) {
+            if let punchItem = punchList?.items[indexPath.row] {
+                if let unit = self.unit {
+                    PunchItemController.togglePunchItemComplete(punchItem, unit: unit)
+                } else if let building = building {
+                    if let buildingNumber = Int(building.buildingID) {
+                        PunchItemController.togglePunchItemComplete(punchItem, unit: buildingNumber)
+                    }
+                }
+            }
+        }
+        tableView.reloadData()
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
