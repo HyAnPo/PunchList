@@ -46,11 +46,15 @@ class PunchDetailTableViewController: UITableViewController {
             if let unit = unit {
                 if punchItem.completedUnits.contains(unit) {
                     punchButton.title = "✔️"
+                } else {
+                    punchButton.title = "👊🏻"
                 }
             } else if let building = self.building {
                 if let buildingNumber = Int(building.buildingID) {
                     if punchItem.completedUnits.contains(buildingNumber) {
                         punchButton.title = "✔️"
+                    } else {
+                        punchButton.title = "👊🏻"
                     }
                 }
             }
