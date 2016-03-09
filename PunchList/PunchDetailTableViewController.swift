@@ -31,13 +31,23 @@ class PunchDetailTableViewController: UITableViewController {
         markPunchComplete()
     }
     
+    @IBAction func saveButtonTapped(sender: UIBarButtonItem) {
+        if let punchItem = punchItem {
+            if let noteText = notesTextView.text {
+                if noteText != punchItem.notes {
+                    punchItem.notes = noteText
+                }
+            }
+        }
+        navigationController?.popViewControllerAnimated(true)
+    }
 
     // MARK: - Functions
     func updateWithPunchItem(punchItem: PunchItem) {
         changeButton()
         descriptionLabel.text = punchItem.itemDescription
-        if let unit = self.unit {
-            notesTextView.text = punchItem.notes[unit]
+        if let punchItemNotes = punchItem.notes {
+            notesTextView.text = punchItemNotes
         }
     }
     

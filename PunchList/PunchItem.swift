@@ -13,7 +13,7 @@ class PunchItem: Equatable {
     let itemDescription: String
     let units: Int
     var completedUnits: [Int] = []
-    var notes: [Int: String] = [:]
+    var notes: String?
     
     init(itemDescription: String, units: Int) {
         self.itemDescription = itemDescription

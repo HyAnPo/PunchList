@@ -41,6 +41,12 @@ class PunchItemTableViewCell: UITableViewCell {
         } else {
             completeButton.setImage(UIImage(named: "incomplete"), forState: .Normal)
         }
+        
+        if !punchItem.completedUnits.contains(unit) && punchItem.notes != nil {
+            punchDescriptionLabel.textColor = UIColor.orangeColor()
+        } else {
+            punchDescriptionLabel.textColor = UIColor.blackColor()
+        }
     }
     
     func toggleButtonImage() {
