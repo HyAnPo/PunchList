@@ -38,11 +38,12 @@ class MasterPunchListTableViewController: UITableViewController {
         if let building = building {
             if section == 0 {
                 return building.buildingPunchList.count
-            } else {
-                return building.unitPunchLists.count
+            } else if building.units.count >= 1 {
+                return building.units[0].punchLists.count
             }
+            return 1
         } else {
-            return 0
+            return 1
         }
     }
     
@@ -55,7 +56,7 @@ class MasterPunchListTableViewController: UITableViewController {
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("unitPunchListCell", forIndexPath: indexPath)
-            let punchList = building?.unitPunchLists[indexPath.row]
+            let punchList = building?.units[0].punchLists[indexPath.row]
             cell.textLabel?.text = punchList?.title
             return cell
         }
@@ -65,27 +66,16 @@ class MasterPunchListTableViewController: UITableViewController {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toUnitListView" {
-            if let destinationViewController = segue.destinationViewController as? UnitListTableViewController {
-                if let indexPath = tableView.indexPathForSelectedRow, building = self.building {
-                    if indexPath.section == 0 {
-                        let punchList = building.buildingPunchList[indexPath.row]
-                        destinationViewController.punchList = punchList
-                    } else {
-                        let punchList = building.unitPunchLists[indexPath.row]
-                        destinationViewController.punchList = punchList
-                    }
-                    destinationViewController.building = building
-                }
+            if let destinationViewController = segue.destinationViewController as? UnitListTableViewController, indexPath = tableView.indexPathForSelectedRow, building = self.building {
+                
+                destinationViewController.building = building
+                destinationViewController.punchListIndex = indexPath.row
             }
         } else if segue.identifier == "toPunchListTableView" {
-            if let destinationViewController = segue.destinationViewController as? PunchListTableViewController {
-                if let indexPath = tableView.indexPathForSelectedRow, building = self.building {
-                    let punchList = building.buildingPunchList[indexPath.row]
-                    destinationViewController.punchList = punchList
-                    if let building = self.building {
-                        destinationViewController.building = building
-                    }
-                }
+            if let destinationViewController = segue.destinationViewController as? PunchListTableViewController, building = self.building, indexPath = tableView.indexPathForSelectedRow {
+                
+                let punchList = building.buildingPunchList[indexPath.row]
+                destinationViewController.punchList = punchList
             }
         }
     }

@@ -1,133 +1,133 @@
-{"Final Punch": {
-	"Drywall": [
-		"Clean excess mud off everything (Cabinets, Tubs, Walls, Shower heads, Electrical box, Water Heater pipes, flue pipes, Furnace room gas line, slider door, dryer box, fire sprinkler heads, heat grills",
-		"Repair all damaged corner bead",
-		"Check for bad texture on walls & ceilings",
-		"Patches"
-		],
-	"Exterior Doors": [
-		"Door Sweeps are on (Entry, Patio)",
-		"Exterior doors close properly, No Rubbing. No squeeks (Entry, Patio)",
-		"Fire-rated attic access installed (third level only)",
-		"All doors latch, & Dead bolts"
-		],
-	"Interior Trim & Hardware": [
-		"Interior door swings are correct, No door rubs, No squeaks",
-		"Base & Case installed (Bathrooms, Kitchen Island, laundry)",
-		"All shelving installed (Closets, Pantry, Laundry Room)",
-		"Door stops, hardware on all doors (Including Patio door)",
-		"Closet rods & shelf supports installed",
-		"Extra material removed"
-		],
-	"Painting": [
-		"Exterior doors painted (Entry and Patio)",
-		"Replace weather stripping & Sweeps on doors after painting!",
-		"Clean overspray off fixtures, hardware, floors, door knobs",
-		"Pull masking off pipes at water heater",
-		"Check furnace filters"
-		],
-	"Flooring": [
-		"Check vinyl for bubbles and seams",
-		"Remove all vinyl scraps",
-		"Carpet Installed",
-		"Check all carpet for bad seams, tuck all edges",
-		"Remove all carpet scraps",
-		"Caulk between winyl and tubs",
-		"All blinds open/close, pull up and down"
-		],
-	"Cabinets": [
-		"Bumpers on all doors and drawers",
-		"Check cabinet door swings, drawers close easily, straight",
-		"Putty all nail holes and seams",
-		"Check for chips and scratches on cabinets",
-		"All toe kick is in place and tight",
-		"Mouse hole blocked out @ Dishwasher",
-		"Remove pencil marks on cabinet backs",
-		"Cabinet back holes are cut clean or repaired"
-		],
-	"Countertops": [
-		"Backsplash is installed and caulked",
-		"Laminate is secure and level",
-		"Free from chips/scratches"
-		],
-	"Low Voltage": [
-		"Low Voltage, Phone, TV, & Internet covers are on and straight"
-		],
-	"Electrical": [
-		"All electrical fixtures are installed, extra lights are out of unit",
-		"Light bulbs and covers for all fixtures",
-		"Test all light & fan switches for correct operation, exhaust fans are working",
-		"Smoke, CO2, and Fire Alarm strobe are installed",
-		"Electrical panel is damage free & labeled correctly",
-		"disconnect box is secure",
-		"exterior lights caulked, & exterior outlets covered",
-		"Cover plates & fixtures plumb",
-		"Caulk kitchen light",
-		"Recepticals kitchen are completed after backsplash"
-		],
-	"HVAC": [
-		"Combustion air & B-vent has escucheons",
-		"Purge heat lines where necessary",
-		"Exhaust fan is plugged in",
-		"Grills & return air are tight to wall and plumb",
-		"Fan coil / AC working",
-		"Cut off combustion air duct close to ceiling",
-		"Condensate line installed and Auto-shut off wired in",
-		"Thermostat working and straight"
-		],
-	"Fire Sprinkler": [
-		"All fire ring caps are on (Unit, Balcony, Garage Stairway & Garages)",
-		"Penetrations fire caulked in furnace closet",
-		"Call B&B for extinguishers and boxes after stucco is complete in breezeways"
-		],
-	"Quartz": [
-		"Check consitency of overhang",
-		"Granite should be sealed/free from chips",
-		"All punch out for sinks are accurate",
-		"Granite is secure"
-		],
-	"Plumbing": [
-		"All plumbing fixtures are installed",
-		"Maintain 1 inch clearance on B-vent",
-		"Penetrations under sinks neatly sealed",
-		"Escucheons are tight to wall (shower head, toilet & under sinks)",
-		"Water Heater, Meter & Expansion tank strapped",
-		"Water lines secured to wall",
-		"Water heater running",
-		"Clean out covers on(first floor only)",
-		"Hot & Cold correct on all fixtures, test all drain stops, flush all toilets",
-		"DAP all sinks, toilets & tub sprouts",
-		"Water Heater pan not broken",
-		"Remove excess caulk on tub surround joints"
-		],
-	"Windows": [
-		"Broken or cracked windows",
-		"Slider latch installed & working",
-		"Screens installed",
-		"Mirrors Installed - Check for cracks, chips, ext..."
-		],
-	"Exterior Finishes": [
-		"Install Unit ID sign",
-		"Flashing clean & damage free (Entry, Patio, Furnace, Storage)",
-		"Stucco splatter removed from surrounding materials(Soffit, A/C Plideck, Slider door, Rails)",
-		"Damage to exterior finishes on patio"
-		],
-	"Appliances": [
-		"Dishwasher (secured)",
-		"Range (Anti-Tip)",
-		"Fridge",
-		"Washer & Dryer (Tight hook-ups)"
-		],
-	"Iron Work": [
-		"All railings installed (Balconys, breezeways) & free of knicks/scratches"
-		],
-	"Wasatch": [
-		"All construction debris or scrap pieces are gone",
-		"All Manuals, sink stoppers, & Disposal key in one place",
-		"Straighten Washer/Dryer, Window coverings",
-		"Knock down all hinge pins",
-		"Make sure that everything is clean, streets, exteriors and so on",
-		"All construction debris or scrap pieces are gone"
-		]
-	}
+{"Final Punch": [
+                 {"Drywall": [
+                              "Clean excess mud off everything (Cabinets, Tubs, Walls, Shower heads, Electrical box, Water Heater pipes, flue pipes, Furnace room gas line, slider door, dryer box, fire sprinkler heads, heat grills",
+                              "Repair all damaged corner bead",
+                              "Check for bad texture on walls & ceilings",
+                              "Patches"
+                              ]},
+                 {"Exterior Doors": [
+                                     "Door Sweeps are on (Entry, Patio)",
+                                     "Exterior doors close properly, No Rubbing. No squeeks (Entry, Patio)",
+                                     "Fire-rated attic access installed (third level only)",
+                                     "All doors latch, & Dead bolts"
+                                     ]},
+                 {"Interior Trim & Hardware": [
+                                               "Interior door swings are correct, No door rubs, No squeaks",
+                                               "Base & Case installed (Bathrooms, Kitchen Island, laundry)",
+                                               "All shelving installed (Closets, Pantry, Laundry Room)",
+                                               "Door stops, hardware on all doors (Including Patio door)",
+                                               "Closet rods & shelf supports installed",
+                                               "Extra material removed"
+                                               ]},
+                 {"Painting": [
+                               "Exterior doors painted (Entry and Patio)",
+                               "Replace weather stripping & Sweeps on doors after painting!",
+                               "Clean overspray off fixtures, hardware, floors, door knobs",
+                               "Pull masking off pipes at water heater",
+                               "Check furnace filters"
+                               ]},
+                 {"Flooring": [
+                               "Check vinyl for bubbles and seams",
+                               "Remove all vinyl scraps",
+                               "Carpet Installed",
+                               "Check all carpet for bad seams, tuck all edges",
+                               "Remove all carpet scraps",
+                               "Caulk between winyl and tubs",
+                               "All blinds open/close, pull up and down"
+                               ]},
+                 {"Cabinets": [
+                               "Bumpers on all doors and drawers",
+                               "Check cabinet door swings, drawers close easily, straight",
+                               "Putty all nail holes and seams",
+                               "Check for chips and scratches on cabinets",
+                               "All toe kick is in place and tight",
+                               "Mouse hole blocked out @ Dishwasher",
+                               "Remove pencil marks on cabinet backs",
+                               "Cabinet back holes are cut clean or repaired"
+                               ]},
+                 {"Countertops": [
+                                  "Backsplash is installed and caulked",
+                                  "Laminate is secure and level",
+                                  "Free from chips/scratches"
+                                  ]},
+                 {"Low Voltage": [
+                                  "Low Voltage, Phone, TV, & Internet covers are on and straight"
+                                  ]},
+                 {"Electrical": [
+                                 "All electrical fixtures are installed, extra lights are out of unit",
+                                 "Light bulbs and covers for all fixtures",
+                                 "Test all light & fan switches for correct operation, exhaust fans are working",
+                                 "Smoke, CO2, and Fire Alarm strobe are installed",
+                                 "Electrical panel is damage free & labeled correctly",
+                                 "disconnect box is secure",
+                                 "exterior lights caulked, & exterior outlets covered",
+                                 "Cover plates & fixtures plumb",
+                                 "Caulk kitchen light",
+                                 "Recepticals kitchen are completed after backsplash"
+                                 ]},
+                 {"HVAC": [
+                           "Combustion air & B-vent has escucheons",
+                           "Purge heat lines where necessary",
+                           "Exhaust fan is plugged in",
+                           "Grills & return air are tight to wall and plumb",
+                           "Fan coil / AC working",
+                           "Cut off combustion air duct close to ceiling",
+                           "Condensate line installed and Auto-shut off wired in",
+                           "Thermostat working and straight"
+                           ]},
+                 {"Fire Sprinkler": [
+                                     "All fire ring caps are on (Unit, Balcony, Garage Stairway & Garages)",
+                                     "Penetrations fire caulked in furnace closet",
+                                     "Call B&B for extinguishers and boxes after stucco is complete in breezeways"
+                                     ]},
+                 {"Quartz": [
+                             "Check consitency of overhang",
+                             "Granite should be sealed/free from chips",
+                             "All punch out for sinks are accurate",
+                             "Granite is secure"
+                             ]},
+                 {"Plumbing": [
+                               "All plumbing fixtures are installed",
+                               "Maintain 1 inch clearance on B-vent",
+                               "Penetrations under sinks neatly sealed",
+                               "Escucheons are tight to wall (shower head, toilet & under sinks)",
+                               "Water Heater, Meter & Expansion tank strapped",
+                               "Water lines secured to wall",
+                               "Water heater running",
+                               "Clean out covers on(first floor only)",
+                               "Hot & Cold correct on all fixtures, test all drain stops, flush all toilets",
+                               "DAP all sinks, toilets & tub sprouts",
+                               "Water Heater pan not broken",
+                               "Remove excess caulk on tub surround joints"
+                               ]},
+                 {"Windows": [
+                              "Broken or cracked windows",
+                              "Slider latch installed & working",
+                              "Screens installed",
+                              "Mirrors Installed - Check for cracks, chips, ext..."
+                              ]},
+                 {"Exterior Finishes": [
+                                        "Install Unit ID sign",
+                                        "Flashing clean & damage free (Entry, Patio, Furnace, Storage)",
+                                        "Stucco splatter removed from surrounding materials(Soffit, A/C Plideck, Slider door, Rails)",
+                                        "Damage to exterior finishes on patio"
+                                        ]},
+                 {"Appliances": [
+                                 "Dishwasher (secured)",
+                                 "Range (Anti-Tip)",
+                                 "Fridge",
+                                 "Washer & Dryer (Tight hook-ups)"
+                                 ]},
+                 {"Iron Work": [
+                                "All railings installed (Balconys, breezeways) & free of knicks/scratches"
+                                ]},
+                 {"Wasatch": [
+                              "All construction debris or scrap pieces are gone",
+                              "All Manuals, sink stoppers, & Disposal key in one place",
+                              "Straighten Washer/Dryer, Window coverings",
+                              "Knock down all hinge pins",
+                              "Make sure that everything is clean, streets, exteriors and so on",
+                              "All construction debris or scrap pieces are gone"
+                              ]}
+                 ]
 }

@@ -40,6 +40,7 @@
 		821FD7101C829C8C001572E8 /* 4WayPunch.json in Resources */ = {isa = PBXBuildFile; fileRef = 821FD70D1C829C8C001572E8 /* 4WayPunch.json */; };
 		821FD7111C829C8C001572E8 /* finalPunch.json in Resources */ = {isa = PBXBuildFile; fileRef = 821FD70E1C829C8C001572E8 /* finalPunch.json */; };
 		821FD7121C829C8C001572E8 /* frontEndPunch.json in Resources */ = {isa = PBXBuildFile; fileRef = 821FD70F1C829C8C001572E8 /* frontEndPunch.json */; };
+		825F13231C938724000EFBEE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F13221C938724000EFBEE /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,6 +92,7 @@
 		821FD70D1C829C8C001572E8 /* 4WayPunch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 4WayPunch.json; sourceTree = "<group>"; };
 		821FD70E1C829C8C001572E8 /* finalPunch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = finalPunch.json; sourceTree = "<group>"; };
 		821FD70F1C829C8C001572E8 /* frontEndPunch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = frontEndPunch.json; sourceTree = "<group>"; };
+		825F13221C938724000EFBEE /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +115,6 @@
 		245894E81C10DCCE0000DAFB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				24FED0B11C8A5E0100585668 /* PunchItemTableViewCell.swift */,
 				242FDAD91C877A3A002E65EE /* CreateProjectTableViewController.swift */,
 				245894E01C0FA9280000DAFB /* ProjectsListTableViewController.swift */,
 				24227B301C743A550001DEDC /* BuildingListTableViewController.swift */,
@@ -123,6 +124,7 @@
 				24227B381C743D620001DEDC /* PunchDetailTableViewController.swift */,
 				245894E61C0FAD730000DAFB /* SignupTableViewController.swift */,
 				245894E21C0FACE30000DAFB /* LoginSignUpPickerViewController.swift */,
+				24FED0B11C8A5E0100585668 /* PunchItemTableViewCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -134,6 +136,7 @@
 				245894EC1C10F7340000DAFB /* Project.swift */,
 				82019ADD1C7B967E009C5155 /* Building.swift */,
 				82019ADF1C7B96B0009C5155 /* PunchList.swift */,
+				825F13221C938724000EFBEE /* Category.swift */,
 				82019AE31C7B986C009C5155 /* Unit.swift */,
 				82019AE11C7B97EB009C5155 /* PunchItem.swift */,
 			);
@@ -304,6 +307,7 @@
 				245894F91C1100430000DAFB /* UserController.swift in Sources */,
 				245894E71C0FAD730000DAFB /* SignupTableViewController.swift in Sources */,
 				245894ED1C10F7340000DAFB /* Project.swift in Sources */,
+				825F13231C938724000EFBEE /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,9 +10,7 @@ import UIKit
 
 class PunchListTableViewController: UITableViewController {
     
-    var building: Building?
     var punchList: PunchList?
-    var unit: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +26,25 @@ class PunchListTableViewController: UITableViewController {
     }
 
     // MARK: - TableView Data Source methods
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        if let punchList = punchList, categories = punchList.categories {
-//            return categories.count
-//        } else {
-//            return 0
-//        }
-//    }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if let punchList = punchList {
+            return punchList.categories.count
+        } else {
+            return 1
+        }
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if let punchList = punchList {
+            return punchList.categories[section].title
+        } else {
+            return nil
+        }
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let punchList = self.punchList {
-            return punchList.items.count
+        if let punchList = punchList {
+            return punchList.categories[section].punchItems.count
         } else {
             return 0
         }
@@ -46,66 +52,51 @@ class PunchListTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier("punchItemCell", forIndexPath: indexPath) as? PunchItemTableViewCell, punchList = punchList {
-            let punchItem = punchList.items[indexPath.row]
-            if let unit = unit {
-                cell.updateCellWithDescription(punchItem, unit: unit)
-                cell.delegate = self
-                return cell
-            } else if let building = building {
-                if let buildingNumber = Int(building.buildingID) {
-                    cell.updateCellWithDescription(punchItem, unit: buildingNumber)
-                    cell.delegate = self
-                    return cell
-                }
-            }
-            return UITableViewCell()
+            let punchItem = punchList.categories[indexPath.section].punchItems[indexPath.row]
+            cell.updateCellWithPunchItem(punchItem)
+            cell.delegate = self
+        
+            return cell
         } else {
             return UITableViewCell()
         }
     }
     
     // MARK: - Buttons
-    @IBAction func plusButtonTapped(sender: UIBarButtonItem) {
-        addNewPunchItemWithAlertController()
-    }
+//    @IBAction func plusButtonTapped(sender: UIBarButtonItem) {
+//        addNewPunchItemWithAlertController()
+//    }
     
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toDetailView" {
-            if let destinationViewController = segue.destinationViewController as? PunchDetailTableViewController {
-                if let indexPath = tableView.indexPathForSelectedRow, punchList = self.punchList {
-                    if let unit = unit {
-                        destinationViewController.unit = unit
-                        destinationViewController.punchItem = punchList.items[indexPath.row]
-                    } else if let building = self.building {
-                        destinationViewController.building = building
-                        destinationViewController.punchItem = punchList.items[indexPath.row]
-                    }
-                }
+            if let destinationViewController = segue.destinationViewController as? PunchDetailTableViewController, indexPath = tableView.indexPathForSelectedRow, punchList = self.punchList {
+                let punchItem = punchList.categories[indexPath.section].punchItems[indexPath.row]
+                destinationViewController.punchItem = punchItem
             }
         }
     }
     
     // MARK: - Functions
-    func addNewPunchItemWithAlertController() {
-        let alert = UIAlertController(title: "Add New Punch Item", message: "Enter Punch description", preferredStyle: .Alert)
-        alert.addTextFieldWithConfigurationHandler(nil)
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
-        let addAction = UIAlertAction(title: "Add", style: UIAlertActionStyle.Default) { (_) -> Void in
-            if let textFields = alert.textFields, description = textFields[0].text, punchList = self.punchList {
-                let punchItem = PunchItem(itemDescription: description, units: punchList.units)
-                if let building = self.building, punchList = self.punchList {
-                    ProjectController.sharedController.addPunchItemToPunchListForBuilding(building, punchList: punchList, punchItem: punchItem)
-                    self.tableView.reloadData()
-                }
-                
-            }
-        }
-        alert.addAction(addAction)
-        alert.addAction(cancelAction)
-    
-        presentViewController(alert, animated: true, completion: nil)
-    }
+//    func addNewPunchItemWithAlertController() {
+//        let alert = UIAlertController(title: "Add New Punch Item", message: "Enter Punch description", preferredStyle: .Alert)
+//        alert.addTextFieldWithConfigurationHandler(nil)
+//        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+//        let addAction = UIAlertAction(title: "Add", style: UIAlertActionStyle.Default) { (_) -> Void in
+//            if let textFields = alert.textFields, description = textFields[0].text, punchList = self.punchList {
+//                let punchItem = PunchItem(itemDescription: description, category: nil, units: punchList.units)
+//                if let building = self.building, punchList = self.punchList {
+//                    ProjectController.sharedController.addPunchItemToPunchListForBuilding(building, punchList: punchList, punchItem: punchItem)
+//                    self.tableView.reloadData()
+//                }
+//                
+//            }
+//        }
+//        alert.addAction(addAction)
+//        alert.addAction(cancelAction)
+//    
+//        presentViewController(alert, animated: true, completion: nil)
+//    }
     
     func changeCellTextColor(cell: UITableViewCell, colorForState: UIColor) {
         cell.textLabel?.textColor = colorForState
@@ -116,16 +107,10 @@ class PunchListTableViewController: UITableViewController {
 extension PunchListTableViewController: PunchItemTableViewCellDelegate {
     
     func punchItemCellButtonTapped(sender: PunchItemTableViewCell) {
-        if let indexPath = tableView.indexPathForCell(sender) {
-            if let punchItem = punchList?.items[indexPath.row] {
-                if let unit = self.unit {
-                    PunchItemController.togglePunchItemComplete(punchItem, unit: unit)
-                } else if let building = building {
-                    if let buildingNumber = Int(building.buildingID) {
-                        PunchItemController.togglePunchItemComplete(punchItem, unit: buildingNumber)
-                    }
-                }
-            }
+        if let indexPath = tableView.indexPathForCell(sender), punchList = punchList {
+            let punchItem = punchList.categories[indexPath.section].punchItems[indexPath.row]
+            punchItem.isComplete = !punchItem.isComplete
+            sender.toggleButtonImage()
         }
         tableView.reloadData()
     }

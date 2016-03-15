@@ -29,10 +29,10 @@ class ProjectController {
     var mockData: [Project] {
         get {
             let projects = [
-                Project(id: nil, name: "The Four Seasons", pin: "3928", numberOfBuildings: 20, unitsPerBuilding: 12, dueDate: nil),
-                Project(id: nil, name: "The Seasons", pin: "2923", numberOfBuildings: 15, unitsPerBuilding: 6, dueDate: nil),
-                Project(id: nil, name: "4 Plex", pin: "0293", numberOfBuildings: 1, unitsPerBuilding: 4, dueDate: nil),
-                Project(id: nil, name: "Villas On Main", pin: "3920", numberOfBuildings: 10, unitsPerBuilding: 12, dueDate: nil)
+                Project(id: nil, name: "Project 1", pin: "3928", numberOfBuildings: 20, unitsPerBuilding: 12, dueDate: nil),
+                Project(id: nil, name: "Project 2", pin: "2923", numberOfBuildings: 15, unitsPerBuilding: 6, dueDate: nil),
+                Project(id: nil, name: "Project 3", pin: "0293", numberOfBuildings: 1, unitsPerBuilding: 4, dueDate: nil),
+                Project(id: nil, name: "Project 4", pin: "3920", numberOfBuildings: 10, unitsPerBuilding: 12, dueDate: nil)
             ]
             return projects
         }
@@ -45,17 +45,7 @@ class ProjectController {
     
     // UPDATE
     func addPunchItemToPunchListForBuilding(building: Building, punchList: PunchList, punchItem: PunchItem) {
-        if let index = building.buildingPunchList.indexOf(punchList) {
-            print(building.buildingPunchList[index].items.count)
-            building.buildingPunchList[index].items.append(punchItem)
-            print(building.buildingPunchList[index].items.count)
-        }
         
-        if let index = building.unitPunchLists.indexOf(punchList) {
-            print(building.unitPunchLists[index].items.count)
-            building.unitPunchLists[index].items.append(punchItem)
-            print(building.unitPunchLists[index].items.count)
-        }
         
     }
     

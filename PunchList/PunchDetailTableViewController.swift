@@ -53,35 +53,17 @@ class PunchDetailTableViewController: UITableViewController {
     
     func changeButton() {
         if let punchItem = punchItem {
-            if let unit = unit {
-                if punchItem.completedUnits.contains(unit) {
-                    punchButton.title = "✔️"
-                } else {
-                    punchButton.title = "👊🏻"
-                }
-            } else if let building = self.building {
-                if let buildingNumber = Int(building.buildingID) {
-                    if punchItem.completedUnits.contains(buildingNumber) {
-                        punchButton.title = "✔️"
-                    } else {
-                        punchButton.title = "👊🏻"
-                    }
-                }
+            if !punchItem.isComplete {
+                punchButton.title = "👊🏻"
+            } else {
+                punchButton.title = "✔️"
             }
         }
     }
     
     func markPunchComplete() {
         if let punchItem = punchItem {
-            if let unit = self.unit {
-                PunchItemController.togglePunchItemComplete(punchItem, unit: unit)
-                changeButton()
-            } else if let building = self.building {
-                if let buildingNumber = Int(building.buildingID) {
-                    PunchItemController.togglePunchItemComplete(punchItem, unit: buildingNumber)
-                    changeButton()
-                }
-            }
+            PunchItemController.togglePunchItemComplete(punchItem)
         }
     }
 }

@@ -11,33 +11,45 @@ import Foundation
 class PunchList: Equatable {
     
     let title: String
-    var items: [PunchItem]
-    var units: Int
-    var categories: [String]?
-    var completedUnits: [Int] {
-        var completedUnits: [Int] = []
-        for num in 1...units {
-            var isComplete = true
-            for item in items {
-                if !item.completedUnits.contains(num) {
-                    isComplete = false
+    let categories: [Category]
+    
+    init?(fileName: String) throws {
+        
+        do {
+            
+            guard let fileURL = NSBundle.mainBundle().URLForResource(fileName, withExtension: ".json"),
+                data = NSData(contentsOfURL: fileURL),
+                jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String: [AnyObject]],
+                punchListName = jsonDictionary.keys.first
+                else {
+                    self.title = ""
+                    self.categories = []
+                    return
+            }
+            
+            var categories: [Category] = []
+            if let punchItemNames = jsonDictionary[punchListName] as? [String] {
+                let punchItems = punchItemNames.enumerate().map { PunchItem(itemDescription: $0.1, index: $0.0) }
+                categories = [Category(title: punchListName, punchItems: punchItems)]
+            } else if let categoryDictionaries = jsonDictionary[punchListName] as? [[String: [String]]] {
+                for dict in categoryDictionaries {
+                    guard let categoryName = dict.keys.first, let punchItemNames = dict[categoryName] else { continue }
+                    let punchItems = punchItemNames.enumerate().map { PunchItem(itemDescription: $0.1, index: $0.0) }
+                    categories.append(Category(title: categoryName, punchItems: punchItems))
                 }
             }
-            if isComplete {
-                completedUnits.append(num)
-            }
+            
+            self.title = punchListName
+            self.categories = categories
+        } catch let error {
+            NSLog("Failure to deserialize punch list JSON: \(error)")
+            self.title = ""
+            self.categories = []
+            throw error
         }
-        return completedUnits
-    }
-    
-    init(title: String, items: [PunchItem], units: Int, categories: [String]?) {
-        self.title = title
-        self.items = items
-        self.units = units
-        self.categories = categories
     }
 }
 
 func ==(lhs: PunchList, rhs: PunchList) -> Bool {
-    return lhs.title == rhs.title && lhs.items == rhs.items && lhs.units == rhs.units
+    return lhs.title == rhs.title && lhs.categories == rhs.categories
 }

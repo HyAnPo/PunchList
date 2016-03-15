@@ -1,81 +1,81 @@
-{"4-Way Punch": {
-    "Windows": [
-        "All windows installed",
-        "tempered windows installed",
-        "Broken windows"
-    ],
-    "Low Voltage": [
-        "All boxes installed (check fire rated, exterior walls)",
-        "Caulk all penetrations through fire walls",
-        "Nail plates",
-        "Secure wires within 6' from attic access (Second floor only)"
-    ],
-    "Exterior Doors": [
-        "Install all exterior doors with threshold",
-        "Doors open and close properly",
-        "Broken/Damaged doors",
-        "Hardware & weatherstripping installed"
-    ],
-    "Electrical": [
-        "Nail plates",
-        "Caulk penetrations through fire walls",
-        "Block unused hole(s)",
-        "Verify panel height and make sure cardboard is in it",
-        "Verify W/D placement",
-        "Outlet wired for power",
-        "Verify outlets and switch locations (Range, Microwave, Fridge)",
-        "Verify all light fixtures",
-        "Exhaust fan is wired up",
-        "Secure wires within 6' from AA (Second floor only)",
-        "Center lights in WIC for shelf clearance(12 inches from shelf to center of fixture, away from door)",
-        "Secure and support all wires at 4'",
-        "Remove excess material"
-    ],
-    "Plumbing": [
-        "Nail plates",
-        "Fire caulk penetrations through fire walls",
-        "Block unused holes",
-        "Protect H2O lines from combustion",
-        "Fill/patch concrete",
-        "Verify washer location & washer & water heater drain",
-        "Verify all fixture locations",
-        "Shower head to be installed 80 inch A.F.F.",
-        "Strap bottom plate",
-        "Strap top plate",
-        "Damage tub/showers",
-        "Strap pipe at midspan in stud cavity(ALL)",
-        "Clean-up"
-    ],
-    "HVAC": [
-        "W/H flue, dryer, & combustion complete & caulked",
-        "Maintain clearance for flue - 1 inch",
-        "Insulation shield @ B-vent",
-        "Exhaust fan installed",
-        "Verify dryer location, with box raised off floor",
-        "Exterior penetration flashed and caulked",
-        "Verify stat location & caulk wire",
-        "Transfer grills 86 inch min from floor",
-        "Verify gas to WH & furnace",
-        "Fire caulk holes through fire walls"
-    ],
-    "Drywall": [
-        "Repair drywall",
-        "Draft stops",
-        "Clean-up"
-    ],
-    "Framing": [
-        "Verify anchor bolts",
-        "Strapes and hold downs",
-        "Verify studs under girders & point loads",
-        "Verify bearing headers are correct",
-        "Verify all attic accesses are framed @ 22 1/2 X 30 1/2 and at correct location",
-        "Install WH flue wall",
-        "Fire block party walls every 10'",
-        "Verify walls are plumb and true",
-        "Repair or replace bowed or twisted studs",
-        "Verify truss to truss and truss to wall connections (h-clips, hangers etc)",
-        "Block seams in OSB and holes to exterior",
-        "Backing for drywall",
-        "Clean-up"
-    ]
-}}
+{"4-Way Punch": [
+                 {"Windows": [
+                              "All windows installed",
+                              "tempered windows installed",
+                              "Broken windows"
+                              ]},
+                 {"Low Voltage": [
+                                  "All boxes installed (check fire rated, exterior walls)",
+                                  "Caulk all penetrations through fire walls",
+                                  "Nail plates",
+                                  "Secure wires within 6' from attic access (Second floor only)"
+                                  ]},
+                 {"Exterior Doors": [
+                                     "Install all exterior doors with threshold",
+                                     "Doors open and close properly",
+                                     "Broken/Damaged doors",
+                                     "Hardware & weatherstripping installed"
+                                     ]},
+                 {"Electrical": [
+                                 "Nail plates",
+                                 "Caulk penetrations through fire walls",
+                                 "Block unused hole(s)",
+                                 "Verify panel height and make sure cardboard is in it",
+                                 "Verify W/D placement",
+                                 "Outlet wired for power",
+                                 "Verify outlets and switch locations (Range, Microwave, Fridge)",
+                                 "Verify all light fixtures",
+                                 "Exhaust fan is wired up",
+                                 "Secure wires within 6' from AA (Second floor only)",
+                                 "Center lights in WIC for shelf clearance(12 inches from shelf to center of fixture, away from door)",
+                                 "Secure and support all wires at 4'",
+                                 "Remove excess material"
+                                 ]},
+                 {"Plumbing": [
+                               "Nail plates",
+                               "Fire caulk penetrations through fire walls",
+                               "Block unused holes",
+                               "Protect H2O lines from combustion",
+                               "Fill/patch concrete",
+                               "Verify washer location & washer & water heater drain",
+                               "Verify all fixture locations",
+                               "Shower head to be installed 80 inch A.F.F.",
+                               "Strap bottom plate",
+                               "Strap top plate",
+                               "Damage tub/showers",
+                               "Strap pipe at midspan in stud cavity(ALL)",
+                               "Clean-up"
+                               ]},
+                 {"HVAC": [
+                           "W/H flue, dryer, & combustion complete & caulked",
+                           "Maintain clearance for flue - 1 inch",
+                           "Insulation shield @ B-vent",
+                           "Exhaust fan installed",
+                           "Verify dryer location, with box raised off floor",
+                           "Exterior penetration flashed and caulked",
+                           "Verify stat location & caulk wire",
+                           "Transfer grills 86 inch min from floor",
+                           "Verify gas to WH & furnace",
+                           "Fire caulk holes through fire walls"
+                           ]},
+                 {"Drywall": [
+                              "Repair drywall",
+                              "Draft stops",
+                              "Clean-up"
+                              ]},
+                 {"Framing": [
+                              "Verify anchor bolts",
+                              "Strapes and hold downs",
+                              "Verify studs under girders & point loads",
+                              "Verify bearing headers are correct",
+                              "Verify all attic accesses are framed @ 22 1/2 X 30 1/2 and at correct location",
+                              "Install WH flue wall",
+                              "Fire block party walls every 10'",
+                              "Verify walls are plumb and true",
+                              "Repair or replace bowed or twisted studs",
+                              "Verify truss to truss and truss to wall connections (h-clips, hangers etc)",
+                              "Block seams in OSB and holes to exterior",
+                              "Backing for drywall",
+                              "Clean-up"
+                              ]}
+                 ]}

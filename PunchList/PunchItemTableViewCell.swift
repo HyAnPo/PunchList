@@ -34,18 +34,13 @@ class PunchItemTableViewCell: UITableViewCell {
     
     
     // MARK: - Functions
-    func updateCellWithDescription(punchItem: PunchItem, unit: Int) {
+    func updateCellWithPunchItem(punchItem: PunchItem) {
         punchDescriptionLabel.text = punchItem.itemDescription
-        if punchItem.completedUnits.contains(unit) {
-            completeButton.setImage(UIImage(named: "complete"), forState: .Normal)
-        } else {
-            completeButton.setImage(UIImage(named: "incomplete"), forState: .Normal)
-        }
         
-        if !punchItem.completedUnits.contains(unit) && punchItem.notes != nil {
-            punchDescriptionLabel.textColor = UIColor.orangeColor()
+        if punchItem.isComplete {
+            completeButton.imageView?.image = UIImage(named: "complete")
         } else {
-            punchDescriptionLabel.textColor = UIColor.blackColor()
+            completeButton.imageView?.image = UIImage(named: "incomplete")
         }
     }
     

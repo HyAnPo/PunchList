@@ -11,7 +11,7 @@ import UIKit
 class UnitListTableViewController: UITableViewController {
 
     var building: Building?
-    var punchList: PunchList?
+    var punchListIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class UnitListTableViewController: UITableViewController {
     // MARK: - TableView Data Source methods
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let building = self.building {
-            return building.units
+            return building.units.count
         } else {
             return 0
         }
@@ -45,15 +45,9 @@ class UnitListTableViewController: UITableViewController {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toPunchList" {
-            if let destinationViewController = segue.destinationViewController as? PunchListTableViewController {
-                if let indexPath = tableView.indexPathForSelectedRow {
-                    let unit = indexPath.row
-                    if let punchList = self.punchList, building = self.building {
-                        destinationViewController.building = building
-                        destinationViewController.punchList = punchList
-                        destinationViewController.unit = unit
-                    }
-                }
+            if let destinationViewController = segue.destinationViewController as? PunchListTableViewController, indexPath = tableView.indexPathForSelectedRow, building = self.building, punchListIndex = self.punchListIndex {
+                let punchList = building.units[indexPath.row].punchLists[punchListIndex]
+                destinationViewController.punchList = punchList
             }
         }
     }

@@ -11,17 +11,17 @@ import Foundation
 class PunchItem: Equatable {
         
     let itemDescription: String
-    let units: Int
-    var completedUnits: [Int] = []
+    var isComplete: Bool = false
     var notes: String?
+    let index: Int
     
-    init(itemDescription: String, units: Int) {
+    init(itemDescription: String, index: Int) {
         self.itemDescription = itemDescription
-        self.units = units
+        self.index = index
     }
     
 }
 
 func ==(lhs: PunchItem, rhs: PunchItem) -> Bool {
-    return lhs.itemDescription == rhs.itemDescription && lhs.units == rhs.units && lhs.completedUnits == rhs.completedUnits && lhs.notes == rhs.notes
+    return lhs.itemDescription == rhs.itemDescription && lhs.isComplete == rhs.isComplete && lhs.notes == rhs.notes && lhs.index == rhs.index
 }

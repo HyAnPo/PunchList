@@ -13,7 +13,7 @@ class Project: Equatable {
     let uid: String?
     let name: String
     let pin: String?
-    var buildings: [Building] = []
+    var buildings: [Building]
     var dueDate: NSDate?
     
     init(id: String?, name: String, pin: String?, numberOfBuildings: Int, unitsPerBuilding: Int, dueDate: NSDate?) {
@@ -22,10 +22,13 @@ class Project: Equatable {
         self.pin = pin
         self.dueDate = dueDate
         
+        var buildings = [Building]()
+        
         for num in 1...numberOfBuildings {
-            let building = Building(uid: nil, buildingID: String(num), units: unitsPerBuilding)
-            self.buildings.append(building)
+            let building = Building(buildingID: String(num), unitsPerBuilding: unitsPerBuilding)
+            buildings.append(building)
         }
+        self.buildings = buildings
     }
 }
 
