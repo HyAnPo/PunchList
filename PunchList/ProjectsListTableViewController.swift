@@ -19,6 +19,7 @@ class ProjectsListTableViewController: UITableViewController {
 //
 //        }
 
+        navigationController?.toolbarHidden = true
     }
     
     override func viewWillAppear(animated: Bool) {

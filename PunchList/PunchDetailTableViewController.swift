@@ -26,6 +26,14 @@ class PunchDetailTableViewController: UITableViewController {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.toolbarHidden = false
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        navigationController?.toolbarHidden = true
+    }
+    
     // MARK: - Buttons
     @IBAction func punchButtonTapped(sender: UIBarButtonItem) {
         markPunchComplete()
@@ -40,6 +48,7 @@ class PunchDetailTableViewController: UITableViewController {
             }
         }
         navigationController?.popViewControllerAnimated(true)
+        navigationController?.toolbarHidden = true
     }
 
     // MARK: - Functions

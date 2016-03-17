@@ -11,6 +11,7 @@ import UIKit
 class PunchListTableViewController: UITableViewController {
     
     var punchList: PunchList?
+    var newPunchItemAlertController = UIAlertController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,9 +64,10 @@ class PunchListTableViewController: UITableViewController {
     }
     
     // MARK: - Buttons
-//    @IBAction func plusButtonTapped(sender: UIBarButtonItem) {
-//        addNewPunchItemWithAlertController()
-//    }
+    @IBAction func plusButtonTapped(sender: UIBarButtonItem) {
+        addNewPunchItemWithAlertController()
+        tableView.reloadData()
+    }
     
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -78,31 +80,91 @@ class PunchListTableViewController: UITableViewController {
     }
     
     // MARK: - Functions
-//    func addNewPunchItemWithAlertController() {
-//        let alert = UIAlertController(title: "Add New Punch Item", message: "Enter Punch description", preferredStyle: .Alert)
-//        alert.addTextFieldWithConfigurationHandler(nil)
-//        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
-//        let addAction = UIAlertAction(title: "Add", style: UIAlertActionStyle.Default) { (_) -> Void in
-//            if let textFields = alert.textFields, description = textFields[0].text, punchList = self.punchList {
-//                let punchItem = PunchItem(itemDescription: description, category: nil, units: punchList.units)
-//                if let building = self.building, punchList = self.punchList {
-//                    ProjectController.sharedController.addPunchItemToPunchListForBuilding(building, punchList: punchList, punchItem: punchItem)
-//                    self.tableView.reloadData()
-//                }
-//                
-//            }
-//        }
-//        alert.addAction(addAction)
-//        alert.addAction(cancelAction)
-//    
-//        presentViewController(alert, animated: true, completion: nil)
-//    }
+    func addNewPunchItemWithAlertController() {
+        let pickerView = self.configurePickerView()
+        let pickerViewToolbar = self.configurePickerViewToolbar()
+        
+        let alert = UIAlertController(title: "Add New Punch Item", message: "Enter Punch description", preferredStyle: .Alert)
+        self.newPunchItemAlertController = alert
+        
+        alert.addTextFieldWithConfigurationHandler { (descriptionTextField) -> Void in
+            descriptionTextField.placeholder = "Punch Item Description"
+            descriptionTextField.returnKeyType = .Next
+            descriptionTextField.delegate = self
+        }
+   
+        alert.addTextFieldWithConfigurationHandler { (categoryTextField) -> Void in
+            pickerView.delegate = self
+            categoryTextField.placeholder = "Category"
+            categoryTextField.inputView = pickerView
+            categoryTextField.inputAccessoryView = pickerViewToolbar
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:  nil)
+        
+        let addAction = UIAlertAction(title: "Add", style: UIAlertActionStyle.Default) { (_) -> Void in
+            if let textFields = alert.textFields, description = textFields[0].text, punchList = self.punchList, itemIndex = punchList.categories.last?.punchItems.count {
+                let index = pickerView.selectedRowInComponent(0)
+                let punchItem = PunchItem(itemDescription: description, index: itemIndex + 1)
+                punchList.categories[index].punchItems.append(punchItem)
+                self.tableView.reloadData()
+            }
+        }
+        
+        alert.addAction(addAction)
+        alert.addAction(cancelAction)
+        alert.actions[0].enabled = false
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func configurePickerView() -> UIPickerView {
+        let pickerView = UIPickerView()
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        
+        return pickerView
+    }
+    
+    // TODO: - barButtonItems need to be setup
+    func configurePickerViewToolbar() -> UIToolbar {
+        let toolbar = UIToolbar()
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "doneButton")
+        let spacer = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        
+        
+        toolbar.setItems([cancelButton, spacer, doneButton], animated: true)
+        toolbar.sizeToFit()
+        toolbar.backgroundColor = UIColor.grayColor()
+        toolbar.userInteractionEnabled = true
+        
+        return toolbar
+    }
+    
+    func doneButton() {
+        if let textFields = newPunchItemAlertController.textFields {
+            textFields[1].resignFirstResponder()
+        }
+        
+        if let textFields = newPunchItemAlertController.textFields, text = textFields[1].text {
+            if !text.isEmpty {
+                newPunchItemAlertController.actions[0].enabled = true
+            }
+        }
+    }
+    
+    func cancelButton() {
+        
+    }
     
     func changeCellTextColor(cell: UITableViewCell, colorForState: UIColor) {
         cell.textLabel?.textColor = colorForState
     }
     
 }
+
+// MARK: - Extensions
 
 extension PunchListTableViewController: PunchItemTableViewCellDelegate {
     
@@ -116,7 +178,38 @@ extension PunchListTableViewController: PunchItemTableViewCellDelegate {
     }
 }
 
-
+extension PunchListTableViewController: UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+    
+    // MARK: - PickerView Data source methods
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if let punchList = punchList {
+            return punchList.categories.count
+        } else {
+            return 0
+        }
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if let punchList = punchList {
+            let category = punchList.categories[row]
+            
+            return category.title
+        } else {
+            return nil
+        }
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if let punchList = punchList {
+            newPunchItemAlertController.textFields![1].text = punchList.categories[row].title
+        }
+    }
+    
+}
 
 
 

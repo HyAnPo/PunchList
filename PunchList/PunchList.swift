@@ -11,7 +11,7 @@ import Foundation
 class PunchList: Equatable {
     
     let title: String
-    let categories: [Category]
+    var categories: [Category]
     
     init?(fileName: String) throws {
         
@@ -37,6 +37,7 @@ class PunchList: Equatable {
                     let punchItems = punchItemNames.enumerate().map { PunchItem(itemDescription: $0.1, index: $0.0) }
                     categories.append(Category(title: categoryName, punchItems: punchItems))
                 }
+                categories.append(Category(title: "Other", punchItems: []))
             }
             
             self.title = punchListName
