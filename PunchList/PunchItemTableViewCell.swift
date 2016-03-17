@@ -44,10 +44,10 @@ class PunchItemTableViewCell: UITableViewCell {
         }
     }
     
-    func toggleButtonImage() {
-        if completeButton.imageView?.image == UIImage(named: "incomplete") {
+    func toggleButtonImage(punchItem: PunchItem) {
+        if punchItem.isComplete {
             completeButton.setImage(UIImage(named: "complete"), forState: .Normal)
-        } else {
+        } else if !punchItem.isComplete {
             completeButton.setImage(UIImage(named: "incomplete"), forState: .Normal)
         }
     }
