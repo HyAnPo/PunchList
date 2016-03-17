@@ -126,10 +126,9 @@ class PunchListTableViewController: UITableViewController {
         return pickerView
     }
     
-    // TODO: - barButtonItems need to be setup
     func configurePickerViewToolbar() -> UIToolbar {
         let toolbar = UIToolbar()
-        let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: "cancelButton")
         let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "doneButton")
         let spacer = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
         
@@ -155,7 +154,9 @@ class PunchListTableViewController: UITableViewController {
     }
     
     func cancelButton() {
-        
+        if let textFields = newPunchItemAlertController.textFields {
+            textFields[1].resignFirstResponder()
+        }
     }
     
     func changeCellTextColor(cell: UITableViewCell, colorForState: UIColor) {

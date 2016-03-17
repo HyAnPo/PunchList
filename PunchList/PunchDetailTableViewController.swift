@@ -37,6 +37,7 @@ class PunchDetailTableViewController: UITableViewController {
     // MARK: - Buttons
     @IBAction func punchButtonTapped(sender: UIBarButtonItem) {
         markPunchComplete()
+        changeButton()
     }
     
     @IBAction func saveButtonTapped(sender: UIBarButtonItem) {
