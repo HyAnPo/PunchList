@@ -24,6 +24,8 @@ class PunchDetailTableViewController: UITableViewController {
         if let punchItem = self.punchItem {
             updateWithPunchItem(punchItem)
         }
+        
+        configureTextView(notesTextView)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -76,4 +78,47 @@ class PunchDetailTableViewController: UITableViewController {
             PunchItemController.togglePunchItemComplete(punchItem)
         }
     }
+    
+    func dismissKeyboard() {
+        self.notesTextView.resignFirstResponder()
+    }
 }
+
+extension PunchDetailTableViewController: UITextViewDelegate {
+    
+    func configureTextView(textView: UITextView) {
+        let toolbar = UIToolbar()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "dismissKeyboard")
+        let spacer = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        
+        toolbar.setItems([spacer, doneButton], animated: true)
+        toolbar.translucent = true
+        toolbar.sizeToFit()
+        
+        textView.inputAccessoryView = toolbar
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

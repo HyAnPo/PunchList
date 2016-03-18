@@ -42,6 +42,7 @@ class PunchItemTableViewCell: UITableViewCell {
         } else {
             completeButton.imageView?.image = UIImage(named: "incomplete")
         }
+        
     }
     
     func toggleButtonImage(punchItem: PunchItem) {
