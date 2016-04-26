@@ -8,19 +8,21 @@
 
 import Foundation
 
-class Project: Equatable {
+class Project: Equatable, FirebaseType {
     
-    let uid: String?
+    private let kName = "name"
+    private let kPin = "pin"
+    private let kBuildings = "buildings"
+    
+    let identifier: String?
     let name: String
     let pin: String?
     var buildings: [Building]
-    var dueDate: NSDate?
     
-    init(id: String?, name: String, pin: String?, numberOfBuildings: Int, unitsPerBuilding: Int, dueDate: NSDate?) {
-        self.uid = id
+    init(identifier: String?, name: String, pin: String?, numberOfBuildings: Int, unitsPerBuilding: Int) {
+        self.identifier = identifier
         self.name = name
         self.pin = pin
-        self.dueDate = dueDate
         
         var buildings = [Building]()
         
@@ -30,8 +32,28 @@ class Project: Equatable {
         }
         self.buildings = buildings
     }
+    
+    // MARK: - FirebaseType
+    let endpoint = "project"
+    var jsonValue: [String: AnyObject] {
+        var json: [String: AnyObject] = [kName: name, kBuildings: buildings.map({$0.jsonValue})]
+        
+        if let pin = pin {
+            json.updateValue(pin, forKey: kPin)
+        }
+        
+        return json
+    }
+    
+    init?(json: [String : AnyObject], identifier: String) {
+        guard let name = json[kName] as? String, buildings = json[kBuildings] as? [String: AnyObject] else { return nil }
+        
+        self.name = name
+        
+        
+    }
 }
 
 func ==(lhs: Project, rhs: Project) -> Bool {
-    return lhs.uid == rhs.uid && lhs.name == rhs.name
+    return lhs.identifier == rhs.identifier && lhs.name == rhs.name
 }

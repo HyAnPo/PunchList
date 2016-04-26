@@ -20,7 +20,7 @@ struct User: Equatable, FirebaseType {
     var projects: [Project]?
     var identifier: String?
     
-    init(name: String, email: String, uid: String, company: String, projects: [Project]?) {
+    init(name: String, email: String, uid: String?, company: String, projects: [Project]?) {
         
         self.name = name
         self.email = email
@@ -50,12 +50,7 @@ struct User: Equatable, FirebaseType {
     
     init?(json: [String : AnyObject], identifier: String) {
         
-        guard let email = json[userKey] as? String else {
-            
-            self.email = ""
-            
-            return nil
-        }
+        guard let email = json[userKey] as? String else { return nil }
         
         self.email = email
         self.name = json[nameKey] as? String

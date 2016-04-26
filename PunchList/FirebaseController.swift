@@ -15,10 +15,9 @@ class FirebaseController {
     static let base = Firebase(url: "https://punchlistapp.firebaseio.com")
     
     static func dataAtEndpoint(endpoint: String, completion: (data: AnyObject?) -> Void) {
+        let baseForEndpoint = base.childByAppendingPath(endpoint)
         
-        let baseForEndpoint = FirebaseController.base.childByAppendingPath(endpoint)
-        
-        baseForEndpoint.observeSingleEventOfType(.Value, withBlock: { snapshot in
+        baseForEndpoint.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             
             if snapshot.value is NSNull {
                 completion(data: nil)
@@ -28,19 +27,27 @@ class FirebaseController {
         })
     }
     
+    static func observeDataAtEndpoint(endpoint: String, completion: (data: AnyObject?) -> Void) {
+        let baseForEndpoint = base.childByAppendingPath(endpoint)
+        
+        baseForEndpoint.observeEventType(.Value, withBlock: { (snapshot) in
+            
+            if snapshot.value is NSNull {
+                completion(data: nil)
+            } else {
+                completion(data: snapshot.value)
+            }
+        })
+    }
 }
 
 protocol FirebaseType {
     
-    // Properties
     var identifier: String? { get set }
     var endpoint: String { get }
     var jsonValue: [String: AnyObject] { get }
     
-    // initializers
     init?(json: [String: AnyObject], identifier: String)
-    
-    // Functions
     mutating func save()
     func delete()
 }
@@ -51,8 +58,9 @@ extension FirebaseType {
         
         var endpointBase: Firebase
         
-        if let childID = self.identifier {
-            endpointBase = FirebaseController.base.childByAppendingPath(endpoint).childByAppendingPath(childID)
+        if let identifier = self.identifier {
+            endpointBase = FirebaseController.base.childByAppendingPath(endpoint).childByAppendingPath(identifier)
+            
         } else {
             endpointBase = FirebaseController.base.childByAppendingPath(endpoint).childByAutoId()
             self.identifier = endpointBase.key
@@ -63,8 +71,10 @@ extension FirebaseType {
     
     func delete() {
         
-        let endpointBase: Firebase = FirebaseController.base.childByAppendingPath(endpoint).childByAppendingPath(self.identifier)
-        
-        endpointBase.removeValue()
+        if let identifier = self.identifier {
+            let endpointBase = FirebaseController.base.childByAppendingPath(endpoint).childByAppendingPath(identifier)
+            
+            endpointBase.removeValue()
+        }
     }
 }

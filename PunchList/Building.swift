@@ -10,6 +10,10 @@ import Foundation
 
 class Building: Equatable {
     
+    private let kBuildingID = "buildingID"
+    private let kUnits = "units"
+    private let kBuildingPunchList = "buildingPunchList"
+    
     //let uid: String?
     let buildingID: String
     var units: [Unit] = []
@@ -35,6 +39,14 @@ class Building: Equatable {
             print("Failiure to initialize front end punch list with error: \(error)")
         }
         self.buildingPunchList = punchLists
+    }
+    
+    // MARK: - FirebaseType
+    let endpoint = "building"
+    var jsonValue: [String: AnyObject] {
+        let json: [String: AnyObject] = [kBuildingID: buildingID, kUnits: units.map({$0.jsonValue}), kBuildingPunchList: buildingPunchList.map({$0.jsonValue})]
+        
+        return json
     }
 }
 

@@ -10,6 +10,9 @@ import Foundation
 
 class Unit: Equatable {
     
+    private let kUnitID = "unitID"
+    private let kPunchLists = "punchlists"
+    
     let unitID: String
     var punchLists: [PunchList]
     
@@ -30,6 +33,14 @@ class Unit: Equatable {
             }
         }
         self.punchLists = tempPunchLists
+    }
+    
+    // MARK: - FirebaseType
+    let endpoint = "unit"
+    var jsonValue: [String: AnyObject] {
+        let json: [String: AnyObject] = [kUnitID: unitID, kPunchLists: punchLists.map({$0.jsonValue})]
+        
+        return json
     }
 }
 

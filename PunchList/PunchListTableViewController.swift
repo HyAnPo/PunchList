@@ -1,3 +1,4 @@
+
 //
 //  PunchListTableViewController.swift
 //  PunchList
@@ -128,8 +129,8 @@ class PunchListTableViewController: UITableViewController {
     
     func configurePickerViewToolbar() -> UIToolbar {
         let toolbar = UIToolbar()
-        let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: "cancelButton")
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "doneButton")
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(PunchListTableViewController.cancelButton))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(PunchListTableViewController.doneButton))
         let spacer = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
         
         

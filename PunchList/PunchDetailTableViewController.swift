@@ -88,7 +88,7 @@ extension PunchDetailTableViewController: UITextViewDelegate {
     
     func configureTextView(textView: UITextView) {
         let toolbar = UIToolbar()
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "dismissKeyboard")
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(PunchDetailTableViewController.dismissKeyboard))
         let spacer = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
         
         toolbar.setItems([spacer, doneButton], animated: true)
