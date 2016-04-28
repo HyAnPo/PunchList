@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Building: Equatable {
+class Building: Equatable, FirebaseType {
     
     private let kBuildingID = "buildingID"
     private let kUnits = "units"
@@ -18,6 +18,7 @@ class Building: Equatable {
     let buildingID: String
     var units: [Unit] = []
     var buildingPunchList: [PunchList] = []
+    var identifier: String?
     
     init(buildingID: String, unitsPerBuilding: Int) {
         self.buildingID = buildingID
@@ -47,6 +48,15 @@ class Building: Equatable {
         let json: [String: AnyObject] = [kBuildingID: buildingID, kUnits: units.map({$0.jsonValue}), kBuildingPunchList: buildingPunchList.map({$0.jsonValue})]
         
         return json
+    }
+    
+    required init?(json: [String: AnyObject], identifier: String) {
+        guard let buildingID = json[kBuildingID] as? String, units = json[kUnits] as? [String: AnyObject], buildingPunchList = json[kBuildingPunchList] as? [String: AnyObject] else { return nil }
+        
+        self.buildingID = buildingID
+        self.units = units.flatMap({Unit(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+        self.buildingPunchList = buildingPunchList.flatMap({PunchList(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+        self.identifier = identifier
     }
 }
 

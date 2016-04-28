@@ -8,13 +8,14 @@
 
 import Foundation
 
-class PunchList: Equatable {
+class PunchList: Equatable, FirebaseType {
     
     private let kTitle = "title"
     private let kCategories = "categories"
     
     let title: String
     var categories: [Category]
+    var identifier: String?
     
     init?(fileName: String) throws {
         
@@ -63,6 +64,14 @@ class PunchList: Equatable {
         let json: [String: AnyObject] = [kTitle: title, kCategories: categories.map({$0.jsonValue})]
         
         return json
+    }
+    
+    required init?(json: [String: AnyObject], identifier: String) {
+        guard let title = json[kTitle] as? String, categories = json[kCategories] as? [String: AnyObject] else { return nil }
+        
+        self.title = title
+        self.categories = categories.flatMap({Category(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+        self.identifier = identifier
     }
     
 }

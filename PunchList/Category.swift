@@ -17,6 +17,11 @@ struct Category: Equatable, FirebaseType {
     var punchItems: [PunchItem]
     var identifier: String?
     
+    init(title: String, punchItems: [PunchItem]) {
+        self.title = title
+        self.punchItems = punchItems
+    }
+    
     // MARK: - FirebaseType
     let endpoint = "categories"
     var jsonValue: [String: AnyObject] {
@@ -30,6 +35,7 @@ struct Category: Equatable, FirebaseType {
         
         self.title = title
         self.punchItems = punchItems.flatMap({PunchItem(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+        self.identifier = identifier
     }
 }
 

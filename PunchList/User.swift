@@ -8,11 +8,12 @@
 
 import Foundation
 
-struct User: Equatable, FirebaseType {
+class User: Equatable, FirebaseType {
     
-    private let userKey = "user"
-    private let nameKey = "name"
-    private let companyKey = "company"
+    private let kEmail = "email"
+    private let kName = "name"
+    private let kCompany = "company"
+    private let kProjects = "projects"
     
     let name: String?
     let email: String
@@ -30,33 +31,40 @@ struct User: Equatable, FirebaseType {
     }
     
     //MARK: - FirebaseType
-    
     var endpoint: String = "users"
-    
     var jsonValue: [String: AnyObject] {
         
-        var json: [String: AnyObject] = [userKey: self.email]
+        var json: [String: AnyObject] = [kEmail: self.email]
         
         if let name = self.name {
-            json.updateValue(name, forKey: nameKey)
+            json.updateValue(name, forKey: kName)
         }
         
         if let company = self.company {
-            json.updateValue(company, forKey: companyKey)
+            json.updateValue(company, forKey: kCompany)
+        }
+        
+        if let projects = self.projects {
+            json.updateValue(projects.map({$0.jsonValue}), forKey: kProjects)
         }
         
         return json
     }
     
-    init?(json: [String : AnyObject], identifier: String) {
-        
-        guard let email = json[userKey] as? String else { return nil }
+    required init?(json: [String: AnyObject], identifier: String) {
+        guard let email = json[kEmail] as? String else { return nil }
         
         self.email = email
-        self.name = json[nameKey] as? String
-        self.company = json[companyKey] as? String
+        self.name = json[kName] as? String
+        self.company = json[kCompany] as? String
+        
+        if let projects = json[kProjects] as? [String: AnyObject] {
+            self.projects = projects.flatMap({Project(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+        }
+        
         self.identifier = identifier
     }
+    
 }
 
 func ==(lhs: User, rhs: User) -> Bool {

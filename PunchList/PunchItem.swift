@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PunchItem: Equatable, FirebaseType {
+class PunchItem: Equatable, FirebaseType {
     
     private let kItem = "itemDescription"
     private let kIsComplete = "isComplete"
@@ -38,7 +38,7 @@ struct PunchItem: Equatable, FirebaseType {
         return json
     }
     
-    init?(json: [String : AnyObject], identifier: String) {
+    required init?(json: [String : AnyObject], identifier: String) {
         guard let itemDescription = json[kItem] as? String, isComplete = json[kIsComplete] as? Bool, index = json[kIndex] as? Int else { return nil }
         
         self.itemDescription = itemDescription

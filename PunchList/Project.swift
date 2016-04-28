@@ -14,10 +14,10 @@ class Project: Equatable, FirebaseType {
     private let kPin = "pin"
     private let kBuildings = "buildings"
     
-    let identifier: String?
     let name: String
     let pin: String?
     var buildings: [Building]
+    var identifier: String?
     
     init(identifier: String?, name: String, pin: String?, numberOfBuildings: Int, unitsPerBuilding: Int) {
         self.identifier = identifier
@@ -45,13 +45,15 @@ class Project: Equatable, FirebaseType {
         return json
     }
     
-    init?(json: [String : AnyObject], identifier: String) {
+    required init?(json: [String: AnyObject], identifier: String) {
         guard let name = json[kName] as? String, buildings = json[kBuildings] as? [String: AnyObject] else { return nil }
         
         self.name = name
-        
-        
+        self.buildings = buildings.flatMap({Building(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+        self.identifier = identifier
+        self.pin = json[kPin] as? String
     }
+    
 }
 
 func ==(lhs: Project, rhs: Project) -> Bool {

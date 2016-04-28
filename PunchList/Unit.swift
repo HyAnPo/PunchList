@@ -8,13 +8,14 @@
 
 import Foundation
 
-class Unit: Equatable {
+class Unit: Equatable, FirebaseType {
     
     private let kUnitID = "unitID"
     private let kPunchLists = "punchlists"
     
     let unitID: String
     var punchLists: [PunchList]
+    var identifier: String?
     
     init(unitID: String) {
         self.unitID = unitID
@@ -41,6 +42,14 @@ class Unit: Equatable {
         let json: [String: AnyObject] = [kUnitID: unitID, kPunchLists: punchLists.map({$0.jsonValue})]
         
         return json
+    }
+    
+    required init?(json: [String: AnyObject], identifier: String) {
+        guard let unitID = json[kUnitID] as? String, punchLists = json[kPunchLists] as? [String: AnyObject] else { return nil }
+        
+        self.unitID = unitID
+        self.punchLists = punchLists.flatMap({PunchList(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+        self.identifier = identifier
     }
 }
 

@@ -172,7 +172,7 @@ extension PunchListTableViewController: PunchItemTableViewCellDelegate {
     
     func punchItemCellButtonTapped(sender: PunchItemTableViewCell) {
         if let indexPath = tableView.indexPathForCell(sender), punchList = punchList {
-            let punchItem = punchList.categories[indexPath.section].punchItems[indexPath.row]
+            var punchItem = punchList.categories[indexPath.section].punchItems[indexPath.row]
             punchItem.isComplete = !punchItem.isComplete
             sender.toggleButtonImage(punchItem)
         }
