@@ -46,11 +46,14 @@ class PunchItemTableViewCell: UITableViewCell {
     }
     
     func toggleButtonImage(punchItem: PunchItem) {
+        
         if punchItem.isComplete {
             completeButton.setImage(UIImage(named: "complete"), forState: .Normal)
         } else if !punchItem.isComplete {
             completeButton.setImage(UIImage(named: "incomplete"), forState: .Normal)
         }
+        
+        FirebaseController.base.childByAppendingPath(<#T##pathString: String!##String!#>)
     }
 
 }

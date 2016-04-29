@@ -12,8 +12,6 @@ class ProjectController {
     
     static let sharedController = ProjectController()
     
-//    var currentUser: User = UserController.sharedController.currentUser
-    
     var projectsArray: [Project] = []
     
     init() {
@@ -21,11 +19,24 @@ class ProjectController {
     }
     
     // CREATE
+    static func addProjectToFirebase(project: Project, completion: (success: Bool, project: Project?) -> Void) {
+        
+    }
+    
     func addProject(project: Project) {
         projectsArray.append(project)
     }
     
-    // READ/RETRIEVE
+    // READ
+    
+    static func fetchProjectsForUser(user: User, completion: (success: Bool, projects: [Project]?) -> Void) {
+        
+    }
+    
+    static func projectFromIdentifier(identifier: String, completion: (project: Project?) -> Void) {
+        
+    }
+    
     var mockData: [Project] {
         get {
             let projects = [
@@ -37,19 +48,17 @@ class ProjectController {
             return projects
         }
     }
-//    func getProjectsForUser() {
-//        if let projects = currentUser.projects {
-//            self.projectsArray = projects
-//        }
-//    }
     
     // UPDATE
     
     // DELETE/ARCHIVE
-    func deleteProject(project: Project) {
-        if let index = projectsArray.indexOf(project) {
-            projectsArray.removeAtIndex(index)
-        }
+    static func deleteProject(project: Project) {
+        
+    }
+    
+    static func orderProjects(projects: [Project]) -> [Project] {
+        
+        return []
     }
     
 }

@@ -41,6 +41,7 @@
 		821FD7111C829C8C001572E8 /* finalPunch.json in Resources */ = {isa = PBXBuildFile; fileRef = 821FD70E1C829C8C001572E8 /* finalPunch.json */; };
 		821FD7121C829C8C001572E8 /* frontEndPunch.json in Resources */ = {isa = PBXBuildFile; fileRef = 821FD70F1C829C8C001572E8 /* frontEndPunch.json */; };
 		825F13231C938724000EFBEE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F13221C938724000EFBEE /* Category.swift */; };
+		82631B351CD40FC0003A8B59 /* PunchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82631B341CD40FC0003A8B59 /* PunchListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -93,6 +94,7 @@
 		821FD70E1C829C8C001572E8 /* finalPunch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = finalPunch.json; sourceTree = "<group>"; };
 		821FD70F1C829C8C001572E8 /* frontEndPunch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = frontEndPunch.json; sourceTree = "<group>"; };
 		825F13221C938724000EFBEE /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		82631B341CD40FC0003A8B59 /* PunchListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,9 +148,10 @@
 		245894FA1C11004A0000DAFB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				24FED0B31C8ACD8500585668 /* PunchItemController.swift */,
 				245894F81C1100430000DAFB /* UserController.swift */,
 				245894FB1C1100790000DAFB /* ProjectController.swift */,
+				82631B341CD40FC0003A8B59 /* PunchListController.swift */,
+				24FED0B31C8ACD8500585668 /* PunchItemController.swift */,
 				245895071C1100D10000DAFB /* FirebaseController.swift */,
 			);
 			name = Controllers;
@@ -290,6 +293,7 @@
 				245894FC1C1100790000DAFB /* ProjectController.swift in Sources */,
 				24227B351C743C0E0001DEDC /* UnitListTableViewController.swift in Sources */,
 				82019AE41C7B986C009C5155 /* Unit.swift in Sources */,
+				82631B351CD40FC0003A8B59 /* PunchListController.swift in Sources */,
 				245895081C1100D10000DAFB /* FirebaseController.swift in Sources */,
 				82019AE01C7B96B0009C5155 /* PunchList.swift in Sources */,
 				82019AE21C7B97EB009C5155 /* PunchItem.swift in Sources */,

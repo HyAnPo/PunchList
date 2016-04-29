@@ -96,11 +96,6 @@ class UserController {
                     })
                 }
             }
-            
-            
-            
-            //MARK: - Not sure what user to put in this completion block
-//            completion(success: true, user: UserController.sharedController.currentUser)
         }
     }
     

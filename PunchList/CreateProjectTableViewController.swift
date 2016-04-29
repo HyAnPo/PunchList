@@ -39,10 +39,15 @@ class CreateProjectTableViewController: UITableViewController {
     
     //MARK: - Buttons
     @IBAction func createButtonTapped(sender: UIBarButtonItem) {
+        
         if let projectName = projectNameTextField.text, numberOfBuildings = numberOfBuildingsTextField.text, unitsPerBuilding = unitsPerBuildingTextField.text, numberOfBuildingsIntValue: Int = Int(numberOfBuildings), unitsPerBuildingIntValue: Int = Int(unitsPerBuilding) {
-            let newProject = Project(identifier: nil, name: projectName, pin: nil, numberOfBuildings: numberOfBuildingsIntValue, unitsPerBuilding: unitsPerBuildingIntValue)
+            
+            var newProject = Project(identifier: nil, name: projectName, pin: nil, numberOfBuildings: numberOfBuildingsIntValue, unitsPerBuilding: unitsPerBuildingIntValue)
+            
             ProjectController.sharedController.projectsArray.append(newProject)
+            newProject.save()
         }
+        
         navigationController?.popToRootViewControllerAnimated(true)
     }
     

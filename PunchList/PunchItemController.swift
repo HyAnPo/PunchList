@@ -10,11 +10,15 @@ import Foundation
 
 class PunchItemController {
     
-    static func togglePunchItemComplete(punchItem: PunchItem) {
+    static func punchItemFromIdentifier(identifier: String, completion: (punchItem: PunchItem?) -> Void) {
+        
+    }
+    
+    static func togglePunchItemComplete(punchItem: PunchItem, completion: (success: Bool, punchItem: PunchItem?) -> Void) {
         punchItem.isComplete = !punchItem.isComplete
     }
     
-    static func addNoteToPunchItem(punchItem: PunchItem, note: String) {
+    static func addNoteToPunchItem(punchItem: PunchItem, note: String, completion: (success: Bool, post: PunchItem?) -> Void) {
         
     }
 }
