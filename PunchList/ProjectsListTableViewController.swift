@@ -20,6 +20,29 @@ class ProjectsListTableViewController: UITableViewController {
 //        }
 
         navigationController?.toolbarHidden = true
+        
+        
+        PunchItemController.punchItemFromIdentifier("-KHcXPHPRBx3mt9_p9KI") { (punchItem) in
+            
+            if let punchItem = punchItem {
+                
+                PunchItemController.togglePunchItemComplete(punchItem, completion: { (success, punchItem) in
+                    print(punchItem?.isComplete)
+                })
+                
+                PunchItemController.addNoteToPunchItem(punchItem, note: "Does this work?", completion: { (success, post) in
+                    
+                    print(success)
+                })
+                
+            } else {
+                
+                print("No punch item was returned")
+            }
+            
+            
+        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -45,7 +68,7 @@ class ProjectsListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let project = ProjectController.sharedController.projectsArray[indexPath.row]
-            ProjectController.sharedController.deleteProject(project)
+            ProjectController.deleteProject(project)
             
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }

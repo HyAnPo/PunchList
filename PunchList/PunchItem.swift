@@ -17,7 +17,7 @@ class PunchItem: Equatable, FirebaseType {
         
     let itemDescription: String
     var isComplete: Bool = false
-    var notes: String?
+    var notes: [String] = []
     let index: Int
     var identifier: String?
     
@@ -29,11 +29,7 @@ class PunchItem: Equatable, FirebaseType {
     // MARK: - FirebaseType
     let endpoint = "punchItem"
     var jsonValue: [String: AnyObject] {
-        var json: [String: AnyObject] = [kItem: itemDescription, kIsComplete: isComplete, kIndex: index]
-        
-        if let notes = self.notes {
-            json.updateValue(notes, forKey: kNotes)
-        }
+        let json: [String: AnyObject] = [kItem: itemDescription, kIsComplete: isComplete, kNotes: notes, kIndex: index]
         
         return json
     }
@@ -45,7 +41,7 @@ class PunchItem: Equatable, FirebaseType {
         self.isComplete = isComplete
         self.index = index
         
-        if let notes = json[kNotes] as? String {
+        if let notes = json[kNotes] as? [String] {
             self.notes = notes
         }
         
@@ -56,5 +52,5 @@ class PunchItem: Equatable, FirebaseType {
 }
 
 func ==(lhs: PunchItem, rhs: PunchItem) -> Bool {
-    return lhs.itemDescription == rhs.itemDescription && lhs.isComplete == rhs.isComplete && lhs.notes == rhs.notes && lhs.index == rhs.index
+    return lhs.itemDescription == rhs.itemDescription && lhs.isComplete == rhs.isComplete && lhs.index == rhs.index
 }

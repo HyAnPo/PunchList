@@ -53,7 +53,7 @@ class PunchItemTableViewCell: UITableViewCell {
             completeButton.setImage(UIImage(named: "incomplete"), forState: .Normal)
         }
         
-        FirebaseController.base.childByAppendingPath(<#T##pathString: String!##String!#>)
+        //FirebaseController.base.childByAppendingPath(<#T##pathString: String!##String!#>)
     }
 
 }

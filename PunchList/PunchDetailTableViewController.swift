@@ -45,9 +45,9 @@ class PunchDetailTableViewController: UITableViewController {
     @IBAction func saveButtonTapped(sender: UIBarButtonItem) {
         if let punchItem = punchItem {
             if let noteText = notesTextView.text {
-                if noteText != punchItem.notes {
-                    punchItem.notes = noteText
-                }
+//                if noteText != punchItem.notes {
+//                    punchItem.notes = noteText
+//                }
             }
         }
         navigationController?.popViewControllerAnimated(true)
@@ -58,7 +58,7 @@ class PunchDetailTableViewController: UITableViewController {
     func updateWithPunchItem(punchItem: PunchItem) {
         changeButton()
         descriptionLabel.text = punchItem.itemDescription
-        if let punchItemNotes = punchItem.notes {
+        if let punchItemNotes = punchItem.notes.first {
             notesTextView.text = punchItemNotes
         }
     }
@@ -75,7 +75,12 @@ class PunchDetailTableViewController: UITableViewController {
     
     func markPunchComplete() {
         if let punchItem = punchItem {
-            PunchItemController.togglePunchItemComplete(punchItem)
+            
+            // TODO: - Something here
+            PunchItemController.togglePunchItemComplete(punchItem, completion: { (success, punchItem) in
+                
+                
+            })
         }
     }
     
