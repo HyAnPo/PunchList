@@ -12,6 +12,7 @@ class UnitListTableViewController: UITableViewController {
 
     var building: Building?
     var punchListIndex: Int?
+    var units = [Unit]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +25,7 @@ class UnitListTableViewController: UITableViewController {
     
     // MARK: - TableView Data Source methods
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let building = self.building {
-            return building.units.count
-        } else {
-            return 0
-        }
+        return units.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -46,9 +43,25 @@ class UnitListTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toPunchList" {
             if let destinationViewController = segue.destinationViewController as? PunchListTableViewController, indexPath = tableView.indexPathForSelectedRow, building = self.building, punchListIndex = self.punchListIndex {
-                let punchList = building.units[indexPath.row].punchLists[punchListIndex]
-                destinationViewController.punchList = punchList
+//                let punchList = units[indexPath.row].punchLists[punchListIndex]
+//                destinationViewController.punchList = punchList
             }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

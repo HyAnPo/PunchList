@@ -10,7 +10,9 @@ import UIKit
 
 class MasterPunchListTableViewController: UITableViewController {
     
-    var building: Building?
+    var building: Building!
+    var buildingPunchLists: [PunchList]?
+    var unitPunchLists: [PunchList]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,29 +37,31 @@ class MasterPunchListTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let building = building {
-            if section == 0 {
-                return building.buildingPunchList.count
-            } else if building.units.count >= 1 {
-                return building.units[0].punchLists.count
+        
+        var rows = 0
+        
+        if section == 0 {
+            if let buildingPunchLists = self.buildingPunchLists {
+                rows = buildingPunchLists.count
             }
-            return 1
         } else {
-            return 1
+            if let unitPunchLists = self.unitPunchLists {
+                rows = unitPunchLists.count
+            }
         }
+        return rows
     }
     
-    // This is the unitPunchListCell data source method
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("buildingPunchListCell", forIndexPath: indexPath)
-            let punchList = building?.buildingPunchList[indexPath.row]
-            cell.textLabel?.text = punchList?.title
+            let punchList = buildingPunchLists![indexPath.row]
+            cell.textLabel?.text = punchList.title
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("unitPunchListCell", forIndexPath: indexPath)
-            let punchList = building?.units[0].punchLists[indexPath.row]
-            cell.textLabel?.text = punchList?.title
+            let punchList = unitPunchLists![indexPath.row]
+            cell.textLabel?.text = punchList.title
             return cell
         }
     }
@@ -72,11 +76,28 @@ class MasterPunchListTableViewController: UITableViewController {
                 destinationViewController.punchListIndex = indexPath.row
             }
         } else if segue.identifier == "toPunchListTableView" {
-            if let destinationViewController = segue.destinationViewController as? PunchListTableViewController, building = self.building, indexPath = tableView.indexPathForSelectedRow {
+            if let destinationViewController = segue.destinationViewController as? PunchListTableViewController, buildingPunchLists = buildingPunchLists, indexPath = tableView.indexPathForSelectedRow {
                 
-                let punchList = building.buildingPunchList[indexPath.row]
+                let punchList = buildingPunchLists[indexPath.row]
                 destinationViewController.punchList = punchList
             }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
