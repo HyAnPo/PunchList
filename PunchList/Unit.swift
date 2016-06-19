@@ -10,49 +10,86 @@ import Foundation
 
 class Unit: Equatable, FirebaseType {
     
-    private let kUnitID = "unitID"
+    private let kUnitName = "unitName"
     private let kPunchLists = "punchlists"
+    private let kBuildingID = "buildingID"
     
-    let unitID: String
-    var punchLists: [PunchList]
+    let unitName: String
+    
+    // TODO: - Changes made here
+//    var punchLists: [PunchList]
+    
     var identifier: String?
+    var buildingID: String?
     
-    init(unitID: String) {
-        self.unitID = unitID
+    
+    init(unitName: String) {
+        self.unitName = unitName
         
-        let punchListNames = ["4WayPunch", "finalPunch"]
-        var tempPunchLists = [PunchList]()
+        // TODO: - Changes made here
+//        let punchListNames = ["4WayPunch", "finalPunch"]
+//        var tempPunchLists = [PunchList]()
         
-        for name in punchListNames {
-            
-            do {
-                if let punchList = try PunchList(fileName: name) {
-                    tempPunchLists.append(punchList)
-                }
-            } catch let error {
-                print("failiure to initializing \(name) punch List with error: \(error)")
-            }
-        }
-        self.punchLists = tempPunchLists
+//        for name in punchListNames {
+//            
+//            do {
+//                if let punchList = try PunchList(fileName: name) {
+//                    tempPunchLists.append(punchList)
+//                }
+//            } catch let error {
+//                print("failiure to initializing \(name) punch List with error: \(error)")
+//            }
+//        }
+//        self.punchLists = tempPunchLists
     }
     
     // MARK: - FirebaseType
     let endpoint = "unit"
     var jsonValue: [String: AnyObject] {
-        let json: [String: AnyObject] = [kUnitID: unitID, kPunchLists: punchLists.map({$0.jsonValue})]
+        var json: [String: AnyObject] = [kUnitName: unitName   /*, kPunchLists: punchLists.map({$0.jsonValue})*/  ]
+        
+        if let buildingID = buildingID {
+            
+            json[kBuildingID] = buildingID
+        }
         
         return json
     }
     
     required init?(json: [String: AnyObject], identifier: String) {
-        guard let unitID = json[kUnitID] as? String, punchLists = json[kPunchLists] as? [String: AnyObject] else { return nil }
+        guard let unitID = json[kUnitName] as? String  /*, punchLists = json[kPunchLists] as? [String: AnyObject]*/    else { return nil }
         
-        self.unitID = unitID
-        self.punchLists = punchLists.flatMap({PunchList(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+        self.unitName = unitID
+        
+        // TODO: - Changes made here
+//        self.punchLists = punchLists.flatMap({PunchList(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+        
         self.identifier = identifier
+        self.buildingID = json[kBuildingID] as? String
     }
 }
 
 func ==(lhs: Unit, rhs: Unit) -> Bool {
-    return lhs.unitID == rhs.unitID && lhs.punchLists == rhs.punchLists
+    return lhs.unitName == rhs.unitName && lhs.identifier == rhs.identifier
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -12,10 +12,14 @@ class PunchList: Equatable, FirebaseType {
     
     private let kTitle = "title"
     private let kCategories = "categories"
+    private let kBuildingID = "buildingID"
+    private let kUnitID = "unitID"
     
     let title: String
     var categories: [Category]
     var identifier: String?
+    var buildingID: String?
+    var unitID: String?
     
     init?(fileName: String) throws {
         
@@ -61,7 +65,17 @@ class PunchList: Equatable, FirebaseType {
     let endpoint = "punchList"
     var jsonValue: [String: AnyObject] {
         
-        let json: [String: AnyObject] = [kTitle: title, kCategories: categories.map({$0.jsonValue})]
+        var json: [String: AnyObject] = [kTitle: title, kCategories: categories.map({$0.jsonValue})]
+        
+        if let buildingID = buildingID {
+            
+            json[kBuildingID] = buildingID
+        }
+        
+        if let unitID = unitID {
+            
+            json[kUnitID] = unitID
+        }
         
         return json
     }
@@ -72,10 +86,13 @@ class PunchList: Equatable, FirebaseType {
         self.title = title
         self.categories = categories.flatMap({Category(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
         self.identifier = identifier
+        
+        self.buildingID = json[kBuildingID] as? String
+        self.unitID = json[kUnitID] as? String
     }
     
 }
 
 func ==(lhs: PunchList, rhs: PunchList) -> Bool {
-    return lhs.title == rhs.title && lhs.categories == rhs.categories
+    return lhs.title == rhs.title && lhs.identifier == rhs.identifier
 }

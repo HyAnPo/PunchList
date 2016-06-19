@@ -16,7 +16,10 @@ class Project: Equatable, FirebaseType {
     
     let name: String
     let pin: String?
-    var buildings: [Building]
+    
+    // TODO: - buildings will have reference to project with identifier
+//    var buildings: [Building]
+    
     var identifier: String?
     
     init(identifier: String?, name: String, pin: String?, numberOfBuildings: Int, unitsPerBuilding: Int) {
@@ -24,19 +27,23 @@ class Project: Equatable, FirebaseType {
         self.name = name
         self.pin = pin
         
-        var buildings = [Building]()
         
-        for num in 1...numberOfBuildings {
-            let building = Building(buildingID: String(num), unitsPerBuilding: unitsPerBuilding)
-            buildings.append(building)
-        }
-        self.buildings = buildings
+        // TODO: - Change made here
+//        var buildings = [Building]()
+//        
+//        for num in 1...numberOfBuildings {
+//            let building = Building(buildingID: String(num), unitsPerBuilding: unitsPerBuilding)
+//            buildings.append(building)
+//        }
+//        self.buildings = buildings
     }
     
     // MARK: - FirebaseType
     let endpoint = "project"
     var jsonValue: [String: AnyObject] {
-        var json: [String: AnyObject] = [kName: name, kBuildings: buildings.map({$0.jsonValue})]
+        
+        // TODO: - Change made here
+        var json: [String: AnyObject] = [kName: name   /*, kBuildings: buildings.map({$0.jsonValue})*/  ]
         
         if let pin = pin {
             json.updateValue(pin, forKey: kPin)
@@ -46,10 +53,15 @@ class Project: Equatable, FirebaseType {
     }
     
     required init?(json: [String: AnyObject], identifier: String) {
-        guard let name = json[kName] as? String, buildings = json[kBuildings] as? [String: AnyObject] else { return nil }
+        
+        // TODO: - Change made here
+        guard let name = json[kName] as? String   /*, buildings = json[kBuildings] as? [String: AnyObject] */   else { return nil }
         
         self.name = name
-        self.buildings = buildings.flatMap({Building(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+        
+        // TODO: - Change made here
+//        self.buildings = buildings.flatMap({Building(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+        
         self.identifier = identifier
         self.pin = json[kPin] as? String
     }
@@ -59,3 +71,19 @@ class Project: Equatable, FirebaseType {
 func ==(lhs: Project, rhs: Project) -> Bool {
     return lhs.identifier == rhs.identifier && lhs.name == rhs.name
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
